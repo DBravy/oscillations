@@ -1,0 +1,388 @@
+{
+  "checkpoint": "toy_transformer_run/model_trained.pt",
+  "preprocessing": "center",
+  "positions": [
+    5,
+    6,
+    7
+  ],
+  "n_sublayers": 21,
+  "original_n_sublayers": 25,
+  "trim_sublayers": 2,
+  "used_sublayer_indices": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "d_model": 64,
+  "n_input_pairs": 256,
+  "edge_pad": 2,
+  "amp_floor_frac": 0.05,
+  "sublayer_meta": [
+    {
+      "kind": "mlp",
+      "layer": 0
+    },
+    {
+      "kind": "attn",
+      "layer": 1
+    },
+    {
+      "kind": "mlp",
+      "layer": 1
+    },
+    {
+      "kind": "attn",
+      "layer": 2
+    },
+    {
+      "kind": "mlp",
+      "layer": 2
+    },
+    {
+      "kind": "attn",
+      "layer": 3
+    },
+    {
+      "kind": "mlp",
+      "layer": 3
+    },
+    {
+      "kind": "attn",
+      "layer": 4
+    },
+    {
+      "kind": "mlp",
+      "layer": 4
+    },
+    {
+      "kind": "attn",
+      "layer": 5
+    },
+    {
+      "kind": "mlp",
+      "layer": 5
+    },
+    {
+      "kind": "attn",
+      "layer": 6
+    },
+    {
+      "kind": "mlp",
+      "layer": 6
+    },
+    {
+      "kind": "attn",
+      "layer": 7
+    },
+    {
+      "kind": "mlp",
+      "layer": 7
+    },
+    {
+      "kind": "attn",
+      "layer": 8
+    },
+    {
+      "kind": "mlp",
+      "layer": 8
+    },
+    {
+      "kind": "attn",
+      "layer": 9
+    },
+    {
+      "kind": "mlp",
+      "layer": 9
+    },
+    {
+      "kind": "attn",
+      "layer": 10
+    },
+    {
+      "kind": "mlp",
+      "layer": 10
+    }
+  ],
+  "original_sublayer_meta": [
+    {
+      "kind": "embed",
+      "layer": null
+    },
+    {
+      "kind": "attn",
+      "layer": 0
+    },
+    {
+      "kind": "mlp",
+      "layer": 0
+    },
+    {
+      "kind": "attn",
+      "layer": 1
+    },
+    {
+      "kind": "mlp",
+      "layer": 1
+    },
+    {
+      "kind": "attn",
+      "layer": 2
+    },
+    {
+      "kind": "mlp",
+      "layer": 2
+    },
+    {
+      "kind": "attn",
+      "layer": 3
+    },
+    {
+      "kind": "mlp",
+      "layer": 3
+    },
+    {
+      "kind": "attn",
+      "layer": 4
+    },
+    {
+      "kind": "mlp",
+      "layer": 4
+    },
+    {
+      "kind": "attn",
+      "layer": 5
+    },
+    {
+      "kind": "mlp",
+      "layer": 5
+    },
+    {
+      "kind": "attn",
+      "layer": 6
+    },
+    {
+      "kind": "mlp",
+      "layer": 6
+    },
+    {
+      "kind": "attn",
+      "layer": 7
+    },
+    {
+      "kind": "mlp",
+      "layer": 7
+    },
+    {
+      "kind": "attn",
+      "layer": 8
+    },
+    {
+      "kind": "mlp",
+      "layer": 8
+    },
+    {
+      "kind": "attn",
+      "layer": 9
+    },
+    {
+      "kind": "mlp",
+      "layer": 9
+    },
+    {
+      "kind": "attn",
+      "layer": 10
+    },
+    {
+      "kind": "mlp",
+      "layer": 10
+    },
+    {
+      "kind": "attn",
+      "layer": 11
+    },
+    {
+      "kind": "mlp",
+      "layer": 11
+    }
+  ],
+  "per_position": {
+    "5": {
+      "shape": {
+        "N": 256,
+        "L": 21,
+        "D": 64
+      },
+      "fft_energy_concentration": {
+        "bin_means": [
+          4.123459224040466e-15,
+          0.3926855131307001,
+          0.17798409801317858,
+          0.08060291376562959,
+          0.06564597057588048,
+          0.05946135505145307,
+          0.05054216088908779,
+          0.04541829387291129,
+          0.041953780510402446,
+          0.043229089399557954,
+          0.0424768247911962
+        ],
+        "bin1_share": 0.3926855131307001,
+        "bins_1to3_share": 0.6512725249095083,
+        "carrier_freq_2pi_over_L": 0.2991993003418851
+      },
+      "amplitude": {
+        "mean": 1.5907273292541504,
+        "median": 1.1479357481002808,
+        "std": 1.5274232625961304,
+        "per_unit_mean_min": 0.8678768873214722,
+        "per_unit_mean_max": 2.7421419620513916,
+        "edge_vs_interior_interior_mean": 1.2530988454818726,
+        "edge_vs_interior_interior_std": 0.91033935546875,
+        "edge_vs_interior_edge_mean": 3.025646686553955,
+        "edge_vs_interior_edge_std": 2.4865336418151855
+      },
+      "phase_quality": {
+        "frac_monotonic_overall": 0.0037841796875,
+        "frac_well_defined": 0.69805908203125,
+        "frac_monotonic_well_defined": 0.005158695462096703,
+        "median_omega_well_defined": 0.3518245220184326,
+        "mean_abs_omega_well_defined": 0.5822290182113647
+      },
+      "instantaneous_frequency": {
+        "mean": 0.3681020140647888,
+        "median": 0.2694977819919586,
+        "std": 0.5469729900360107,
+        "abs_mean": 0.45375433564186096,
+        "edge_vs_interior_interior_mean": 0.3166746199131012,
+        "edge_vs_interior_interior_std": 0.44261741638183594,
+        "edge_vs_interior_edge_mean": 0.5866683721542358,
+        "edge_vs_interior_edge_std": 0.8240523934364319
+      }
+    },
+    "6": {
+      "shape": {
+        "N": 256,
+        "L": 21,
+        "D": 64
+      },
+      "fft_energy_concentration": {
+        "bin_means": [
+          6.155892220027371e-15,
+          0.45511079186587683,
+          0.1541823191824418,
+          0.09793456571236067,
+          0.06266491036733081,
+          0.05330562731047581,
+          0.043642747714664094,
+          0.03594460639265191,
+          0.032815607247315616,
+          0.03231767419443692,
+          0.03208115001243879
+        ],
+        "bin1_share": 0.45511079186587683,
+        "bins_1to3_share": 0.7072276767606793,
+        "carrier_freq_2pi_over_L": 0.2991993003418851
+      },
+      "amplitude": {
+        "mean": 1.2635517120361328,
+        "median": 0.9396858215332031,
+        "std": 1.137160062789917,
+        "per_unit_mean_min": 0.6435253024101257,
+        "per_unit_mean_max": 1.9873663187026978,
+        "edge_vs_interior_interior_mean": 1.0238183736801147,
+        "edge_vs_interior_interior_std": 0.7538135647773743,
+        "edge_vs_interior_edge_mean": 2.282416582107544,
+        "edge_vs_interior_edge_std": 1.7582968473434448
+      },
+      "phase_quality": {
+        "frac_monotonic_overall": 0.01043701171875,
+        "frac_well_defined": 0.829345703125,
+        "frac_monotonic_well_defined": 0.012437444804239034,
+        "median_omega_well_defined": 0.3187088966369629,
+        "mean_abs_omega_well_defined": 0.5228266716003418
+      },
+      "instantaneous_frequency": {
+        "mean": 0.3491387963294983,
+        "median": 0.25166797637939453,
+        "std": 0.49171367287635803,
+        "abs_mean": 0.42001909017562866,
+        "edge_vs_interior_interior_mean": 0.3045274317264557,
+        "edge_vs_interior_interior_std": 0.40392282605171204,
+        "edge_vs_interior_edge_mean": 0.5387367010116577,
+        "edge_vs_interior_edge_std": 0.7290740013122559
+      }
+    },
+    "7": {
+      "shape": {
+        "N": 256,
+        "L": 21,
+        "D": 64
+      },
+      "fft_energy_concentration": {
+        "bin_means": [
+          1.9681034841403123e-14,
+          0.5313183777944062,
+          0.16663565999177407,
+          0.08939444040619139,
+          0.05732188306997714,
+          0.03706532926762873,
+          0.030711669635402557,
+          0.027196561050919422,
+          0.02085176968886214,
+          0.02160702564723305,
+          0.017897283447583793
+        ],
+        "bin1_share": 0.5313183777944062,
+        "bins_1to3_share": 0.7873484781923716,
+        "carrier_freq_2pi_over_L": 0.2991993003418851
+      },
+      "amplitude": {
+        "mean": 1.928965449333191,
+        "median": 1.5948630571365356,
+        "std": 1.4398232698440552,
+        "per_unit_mean_min": 0.9294662475585938,
+        "per_unit_mean_max": 3.134441614151001,
+        "edge_vs_interior_interior_mean": 1.635596513748169,
+        "edge_vs_interior_interior_std": 1.0134097337722778,
+        "edge_vs_interior_edge_mean": 3.1757829189300537,
+        "edge_vs_interior_edge_std": 2.144446611404419
+      },
+      "phase_quality": {
+        "frac_monotonic_overall": 0.01141357421875,
+        "frac_well_defined": 0.86944580078125,
+        "frac_monotonic_well_defined": 0.012916812916812917,
+        "median_omega_well_defined": 0.32086002826690674,
+        "mean_abs_omega_well_defined": 0.4685705006122589
+      },
+      "instantaneous_frequency": {
+        "mean": 0.3687081038951874,
+        "median": 0.291831374168396,
+        "std": 0.4226573407649994,
+        "abs_mean": 0.4167082607746124,
+        "edge_vs_interior_interior_mean": 0.3262985050678253,
+        "edge_vs_interior_interior_std": 0.36611756682395935,
+        "edge_vs_interior_edge_mean": 0.5489485859870911,
+        "edge_vs_interior_edge_std": 0.5727535486221313
+      }
+    }
+  }
+}

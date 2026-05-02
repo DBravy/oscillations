@@ -1,0 +1,265 @@
+{
+  "position": 7,
+  "indicators_explained": {
+    "spectral_concentration": "1 - mean(H / log(n_bins-1)) per unit, computed on bins 1..end. 1 if spectrum is spiky, 0 if uniform.",
+    "spectral_peakiness": "1 - mean(spectral flatness) per unit, computed on bins 1..end. 1 if tonal, 0 if white-noise.",
+    "dominant_bin_share": "Mean over units of the fraction of energy in the largest FFT bin.",
+    "FM_drift": "|mean Hilbert d omega / d l| over interior l, in carrier units (carrier = 2*pi/L).",
+    "spectral_shape_NS": "Mean cosine distance between early-half and late-half mean STFT spectra. Captures changes in spectral SHAPE across depth.",
+    "amplitude_NS": "Mean |log10(late total power / early total power)|. Captures amplitude growth or decay across depth, regardless of spectral shape."
+  },
+  "per_model": {
+    "random": {
+      "shape": {
+        "N": 256,
+        "L": 25,
+        "D": 64
+      },
+      "n_fft_bins": 13,
+      "carrier_freq": 0.25132741228718347,
+      "spectral_entropy": {
+        "mean": 0.5259754416949983,
+        "median": 0.5132113613602833,
+        "std": 0.12179636506810412
+      },
+      "spectral_flatness": {
+        "mean": 0.2938999108276673,
+        "median": 0.2950738923265267,
+        "std": 0.09927733955985588
+      },
+      "peak_counts": {
+        "mean": 1.484375,
+        "median": 1.0,
+        "histogram_0_to_5": [
+          0,
+          40,
+          18,
+          5,
+          1,
+          0
+        ]
+      },
+      "dominant_bin_distribution": [
+        0,
+        60,
+        3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_share_per_unit": {
+        "mean": 0.618455928725242,
+        "median": 0.6352951906971585
+      },
+      "frequency_drift_hilbert": {
+        "abs_mean": 0.007631240131164518,
+        "abs_mean_relative": 0.030363739719901913
+      },
+      "stft_peak_shift": {
+        "mean": 0.0,
+        "mean_relative": 0.0
+      },
+      "stft_shape_distance": {
+        "mean": 0.004191308282315731,
+        "median": 0.002045363187789917
+      },
+      "stft_log_amplitude_growth": {
+        "mean": -0.031957436352968216,
+        "abs_mean": 0.15047691762447357,
+        "median": 0.011624321341514587
+      },
+      "stft_centroid_drift_relative": {
+        "abs_mean": 0.005051458381892272
+      },
+      "indicators": {
+        "spectral_concentration": 0.4740245583050017,
+        "spectral_peakiness": 0.7061000891723327,
+        "dominant_bin_share": 0.618455928725242,
+        "FM_drift": 0.030363739719901913,
+        "spectral_shape_NS": 0.004191308282315731,
+        "amplitude_NS": 0.15047691762447357
+      },
+      "scenario_fit": {
+        "multi_tone": 0.3231855011390614,
+        "FM": 0.02143983932382824,
+        "broadband_plus_osc": 0.1817641423031908,
+        "multi_component_nonstationary": 0.0029594831518918742
+      }
+    },
+    "gelu_trained": {
+      "shape": {
+        "N": 256,
+        "L": 25,
+        "D": 64
+      },
+      "n_fft_bins": 13,
+      "carrier_freq": 0.25132741228718347,
+      "spectral_entropy": {
+        "mean": 0.8565770012705763,
+        "median": 0.8843527731277177,
+        "std": 0.0994533367770906
+      },
+      "spectral_flatness": {
+        "mean": 0.7592435910750028,
+        "median": 0.7926149655571579,
+        "std": 0.14478944062549118
+      },
+      "peak_counts": {
+        "mean": 2.59375,
+        "median": 3.0,
+        "histogram_0_to_5": [
+          0,
+          13,
+          17,
+          18,
+          15,
+          1
+        ]
+      },
+      "dominant_bin_distribution": [
+        0,
+        64,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_share_per_unit": {
+        "mean": 0.3357506376328402,
+        "median": 0.3058536376934815
+      },
+      "frequency_drift_hilbert": {
+        "abs_mean": 0.008537870576666053,
+        "abs_mean_relative": 0.03397110764388134
+      },
+      "stft_peak_shift": {
+        "mean": 0.0,
+        "mean_relative": 0.0
+      },
+      "stft_shape_distance": {
+        "mean": 0.12778110802173615,
+        "median": 0.12152349948883057
+      },
+      "stft_log_amplitude_growth": {
+        "mean": 0.6267914772033691,
+        "abs_mean": 0.6267914772033691,
+        "median": 0.6582106947898865
+      },
+      "stft_centroid_drift_relative": {
+        "abs_mean": 0.02346220621540198
+      },
+      "indicators": {
+        "spectral_concentration": 0.14342299872942366,
+        "spectral_peakiness": 0.24075640892499717,
+        "dominant_bin_share": 0.3357506376328402,
+        "FM_drift": 0.03397110764388134,
+        "spectral_shape_NS": 0.12778110802173615,
+        "amplitude_NS": 0.6267914772033691
+      },
+      "scenario_fit": {
+        "multi_tone": 0.029094591254499213,
+        "FM": 0.008178761883545393,
+        "broadband_plus_osc": 0.2549165198220796,
+        "multi_component_nonstationary": 0.030764120695770343
+      }
+    },
+    "swiglu_trained": {
+      "shape": {
+        "N": 256,
+        "L": 25,
+        "D": 64
+      },
+      "n_fft_bins": 13,
+      "carrier_freq": 0.25132741228718347,
+      "spectral_entropy": {
+        "mean": 0.9066446607565661,
+        "median": 0.9220521468495926,
+        "std": 0.07957963201332235
+      },
+      "spectral_flatness": {
+        "mean": 0.8383895274723125,
+        "median": 0.8558491726842852,
+        "std": 0.1157830767558642
+      },
+      "peak_counts": {
+        "mean": 3.65625,
+        "median": 4.0,
+        "histogram_0_to_5": [
+          0,
+          7,
+          6,
+          9,
+          24,
+          16
+        ]
+      },
+      "dominant_bin_distribution": [
+        0,
+        64,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_share_per_unit": {
+        "mean": 0.27962820096551366,
+        "median": 0.27346587688454926
+      },
+      "frequency_drift_hilbert": {
+        "abs_mean": 0.0046375925487981565,
+        "abs_mean_relative": 0.018452394454684207
+      },
+      "stft_peak_shift": {
+        "mean": 0.025390625,
+        "mean_relative": 0.05078125
+      },
+      "stft_shape_distance": {
+        "mean": 0.19934500753879547,
+        "median": 0.17720305919647217
+      },
+      "stft_log_amplitude_growth": {
+        "mean": 0.6507463455200195,
+        "abs_mean": 0.6507463455200195,
+        "median": 0.6716873645782471
+      },
+      "stft_centroid_drift_relative": {
+        "abs_mean": 0.024847807929090852
+      },
+      "indicators": {
+        "spectral_concentration": 0.09335533924343387,
+        "spectral_peakiness": 0.16161047252768745,
+        "dominant_bin_share": 0.27962820096551366,
+        "FM_drift": 0.018452394454684207,
+        "spectral_shape_NS": 0.19934500753879547,
+        "amplitude_NS": 0.6507463455200195
+      },
+      "scenario_fit": {
+        "multi_tone": 0.011856744066763044,
+        "FM": 0.0029821001870887942,
+        "broadband_plus_osc": 0.23443735527540985,
+        "multi_component_nonstationary": 0.03221624086438015
+      }
+    }
+  }
+}

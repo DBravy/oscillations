@@ -1,0 +1,44 @@
+{
+  "model": "HuggingFaceTB/SmolLM2-360M",
+  "n_samples": 256,
+  "n_sublayers": 64,
+  "d_model": 960,
+  "n_pairs": 200000,
+  "fixed_bin": 1,
+  "top_cospec_fraction": 0.1,
+  "regime_edges": [
+    0.2821328900172375,
+    0.875842489926678,
+    0.9432417320713284,
+    0.9999978275081958
+  ],
+  "by_regime": {
+    "closest": {
+      "n_pairs": 66667,
+      "mean_cospec_mag": 0.06157730274192034,
+      "median_cospec_mag": 0.04266589620399783,
+      "mean_mag_at_phase_0": 0.061385470355948296,
+      "mean_mag_at_phase_pi_over_2": 0.041069072088469306,
+      "mean_mag_at_phase_minus_pi_over_2": 0.04291174597990022,
+      "mean_mag_at_phase_pi": 0.061909172917307534
+    },
+    "middle": {
+      "n_pairs": 66667,
+      "mean_cospec_mag": 0.03699795592992111,
+      "median_cospec_mag": 0.025614311431979727,
+      "mean_mag_at_phase_0": 0.028510570038354353,
+      "mean_mag_at_phase_pi_over_2": 0.04306997023662269,
+      "mean_mag_at_phase_minus_pi_over_2": 0.043841128059121735,
+      "mean_mag_at_phase_pi": 0.028784223821736604
+    },
+    "furthest": {
+      "n_pairs": 66666,
+      "mean_cospec_mag": 0.03237095462992087,
+      "median_cospec_mag": 0.021671458721262235,
+      "mean_mag_at_phase_0": 0.021611601578642493,
+      "mean_mag_at_phase_pi_over_2": 0.0428564265688677,
+      "mean_mag_at_phase_minus_pi_over_2": 0.04250905161907118,
+      "mean_mag_at_phase_pi": 0.02162815846880432
+    }
+  }
+}

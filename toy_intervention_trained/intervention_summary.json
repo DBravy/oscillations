@@ -1,0 +1,52 @@
+{
+  "checkpoint": "toy_transformer_run/model_trained.pt",
+  "d_model": 64,
+  "n_sublayers": 25,
+  "seed": 42,
+  "random_baseline_2_over_sqrt_piD": 0.14104739588693907,
+  "final_layer_overlaps": {
+    "clean": {
+      "pos5_pos6": 0.0691632446954073,
+      "pos5_pos7": 0.004061083563550384,
+      "pos6_pos7": 0.25498373211717595
+    },
+    "corrupt_p7": {
+      "pos5_pos6": 0.0691632446954073,
+      "pos5_pos7": 0.0041908319260411464,
+      "pos6_pos7": 0.25192191767887073
+    },
+    "corrupt_p5": {
+      "pos5_pos6": 0.7415342450182842,
+      "pos5_pos7": 0.14098607737398886,
+      "pos6_pos7": 0.21894999677140548
+    }
+  },
+  "final_layer_stability": {
+    "corrupt_p7": {
+      "pos5": 0.9999999815920109,
+      "pos6": 0.9999999989937418,
+      "pos7": 0.9999802445012764
+    },
+    "corrupt_p5": {
+      "pos5": 0.43500425773539375,
+      "pos6": 0.9903199696809939,
+      "pos7": 0.9997802381114859
+    }
+  },
+  "drop_relative_to_clean": {
+    "corrupt_p7": {
+      "pos5_pos6": 0.0,
+      "pos5_pos7": -0.00012974836249076208,
+      "pos6_pos7": 0.0030618144383052215
+    },
+    "corrupt_p5": {
+      "pos5_pos6": -0.6723710003228769,
+      "pos5_pos7": -0.13692499381043846,
+      "pos6_pos7": 0.03603373534577048
+    }
+  },
+  "n_inputs_with_changed_token": {
+    "corrupt_p7": 189,
+    "corrupt_p5": 256
+  }
+}

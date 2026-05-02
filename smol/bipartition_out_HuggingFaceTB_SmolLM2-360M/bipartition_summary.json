@@ -1,0 +1,99 @@
+{
+  "model": "HuggingFaceTB/SmolLM2-360M",
+  "d_model": 960,
+  "n_edges": 4956,
+  "groups": {
+    "A": 497,
+    "B": 340,
+    "other": 123
+  },
+  "edge_breakdown": {
+    "within_A": 2430,
+    "within_B": 1514,
+    "between_AB": 1012,
+    "involving_other": 0
+  },
+  "expected_breakdown": {
+    "within_A_expected_frac": 0.3522948786106681,
+    "within_B_expected_frac": 0.1647202071650289,
+    "between_AB_expected_frac": 0.482984914224303
+  },
+  "edge_breakdown_observed_fracs": {
+    "within_A": 0.49031476997578693,
+    "within_B": 0.30548829701372077,
+    "between_AB": 0.20419693301049233
+  },
+  "community_stability": {
+    "n_runs": 5,
+    "min_pairwise_overlap": 0.5937873357228196,
+    "mean_pairwise_overlap": 0.8375149342891278
+  },
+  "feature_stats": {
+    "dominant_freq_bin": {
+      "A": {
+        "n": 497,
+        "mean": 1.0140845070422535,
+        "median": 1.0,
+        "std": 0.11783944035691205
+      },
+      "B": {
+        "n": 340,
+        "mean": 1.0058823529411764,
+        "median": 1.0,
+        "std": 0.07647058823529412
+      },
+      "other": {
+        "n": 123,
+        "mean": 1.048780487804878,
+        "median": 1.0,
+        "std": 0.2154088016177524
+      }
+    },
+    "mean_abs_activation": {
+      "A": {
+        "n": 497,
+        "mean": 0.014917916618287563,
+        "median": 0.011448303237557411,
+        "std": 0.010503394529223442
+      },
+      "B": {
+        "n": 340,
+        "mean": 0.017904499545693398,
+        "median": 0.011259669438004494,
+        "std": 0.03597930073738098
+      },
+      "other": {
+        "n": 123,
+        "mean": 0.010963287204504013,
+        "median": 0.010034275241196156,
+        "std": 0.0033918856643140316
+      }
+    },
+    "per_unit_phase_at_dom_bin": {
+      "A": {
+        "n": 497,
+        "mean": -0.08310592215720528,
+        "median": -0.007212927642847027,
+        "std": 1.772922610537785
+      },
+      "B": {
+        "n": 340,
+        "mean": -0.14869960783393185,
+        "median": 0.21177076262986852,
+        "std": 1.79351121226387
+      },
+      "other": {
+        "n": 123,
+        "mean": -0.30137617655744897,
+        "median": -0.33628037188065013,
+        "std": 1.6694074608271763
+      }
+    }
+  },
+  "bipartite_score": {
+    "within_AB_fraction": 0.7958030669895076,
+    "between_AB_fraction": 0.20419693301049233,
+    "expected_within_AB_fraction": 0.517015085775697,
+    "expected_between_AB_fraction": 0.482984914224303
+  }
+}

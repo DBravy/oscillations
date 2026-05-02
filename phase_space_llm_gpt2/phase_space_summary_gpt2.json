@@ -1,0 +1,89 @@
+{
+  "model": "gpt2",
+  "n_sublayers_used_after_trim": 20,
+  "thresholds": {
+    "r_threshold": 0.3,
+    "pca_threshold": 0.4,
+    "dtheta_threshold_radians": 0.7853981633974483
+  },
+  "per_checkpoint": {
+    "trained": {
+      "shape": {
+        "N": 256,
+        "L": 20,
+        "D": 768
+      },
+      "n_oscillator": 656,
+      "n_degenerate": 4,
+      "n_other": 108,
+      "fraction_oscillator": 0.8541666666666666,
+      "fraction_degenerate": 0.005208333333333333,
+      "r_per_unit": {
+        "mean": -0.18342970311641693,
+        "median": -0.21937915682792664,
+        "abs_mean": 0.20502130687236786,
+        "abs_median": 0.2225559800863266
+      },
+      "A_norm_per_unit": {
+        "mean": -0.2722073197364807,
+        "abs_mean": 0.2722073197364807,
+        "median": -0.2759566605091095
+      },
+      "R_PCA_per_unit": {
+        "mean": 0.5499723553657532,
+        "median": 0.5518057346343994
+      },
+      "dtheta_per_unit": {
+        "circular_mean": 1.6902259588241577,
+        "abs_mean": 1.6902259588241577,
+        "deviation_from_pi_over_2_radians": {
+          "mean": 0.19670408964157104,
+          "median": 0.17643266916275024
+        },
+        "resultant_length": {
+          "mean": 0.7539899945259094,
+          "median": 0.7614253759384155
+        }
+      }
+    },
+    "random_init": {
+      "shape": {
+        "N": 256,
+        "L": 20,
+        "D": 768
+      },
+      "n_oscillator": 244,
+      "n_degenerate": 0,
+      "n_other": 524,
+      "fraction_oscillator": 0.3177083333333333,
+      "fraction_degenerate": 0.0,
+      "r_per_unit": {
+        "mean": -0.3217257559299469,
+        "median": -0.34853601455688477,
+        "abs_mean": 0.32345524430274963,
+        "abs_median": 0.34853601455688477
+      },
+      "A_norm_per_unit": {
+        "mean": -0.30913206934928894,
+        "abs_mean": 0.30913206934928894,
+        "median": -0.3078312873840332
+      },
+      "R_PCA_per_unit": {
+        "mean": 0.5134136080741882,
+        "median": 0.48298537731170654
+      },
+      "dtheta_per_unit": {
+        "circular_mean": 1.9427584409713745,
+        "abs_mean": 1.9427584409713745,
+        "deviation_from_pi_over_2_radians": {
+          "mean": 0.38391098380088806,
+          "median": 0.40662676095962524
+        },
+        "resultant_length": {
+          "mean": 0.8733959794044495,
+          "median": 0.8815854787826538
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "position": 7,
+  "trim": 2,
+  "metrics_explained": {
+    "r": "Pearson(x_l, dx_l) over l per (input, unit). Median over inputs. ~0 = oscillator, +/-1 = degenerate.",
+    "A_norm": "Shoelace signed area of (x, dx) trajectory per (input, unit), normalized by std(x)*std(dx)*L. Magnitude = rotation strength. Negative = forward (clockwise) oscillation.",
+    "R_PCA": "Smaller/larger eigenvalue of 2x2 cov of (x, dx) cloud computed AFTER rescaling dx so var(rescaled dx) = var(x). Frequency-invariant. 1 = circular oscillator at any frequency, 0 = line. Equals (1 - |r|) / (1 + |r|) by construction.",
+    "dtheta": "Mean phase offset arg(Hilbert(dx)) - arg(Hilbert(x)) per (input, unit). Circular mean over inputs. +pi/2 = forward oscillator."
+  },
+  "thresholds": {
+    "r_threshold": 0.3,
+    "pca_threshold": 0.4,
+    "dtheta_threshold_radians": 0.7853981633974483
+  },
+  "per_model": {
+    "random": {
+      "shape": {
+        "N": 256,
+        "L": 21,
+        "D": 64
+      },
+      "n_oscillator": 19,
+      "n_degenerate": 0,
+      "n_other": 45,
+      "fraction_oscillator": 0.296875,
+      "r_per_unit": {
+        "mean": -0.32795733804072463,
+        "median": -0.3532600459478259,
+        "abs_mean": 0.3303360679892512,
+        "abs_median": 0.3532600459478259
+      },
+      "A_norm_per_unit": {
+        "mean": -0.3062466822360156,
+        "abs_mean": 0.3062466822360156,
+        "median": -0.30120339670896157
+      },
+      "R_PCA_per_unit": {
+        "mean": 0.505554828430212,
+        "median": 0.4782599401602522
+      },
+      "dtheta_per_unit": {
+        "circular_mean": 1.9249913466181838,
+        "abs_mean": 1.9249913466181838,
+        "deviation_from_pi_over_2_radians": {
+          "mean": 0.38810368971582276,
+          "median": 0.40141095133461013
+        },
+        "resultant_length": {
+          "mean": 0.8815942671292827,
+          "median": 0.8970448452566229
+        }
+      }
+    },
+    "gelu": {
+      "shape": {
+        "N": 256,
+        "L": 21,
+        "D": 64
+      },
+      "n_oscillator": 43,
+      "n_degenerate": 0,
+      "n_other": 21,
+      "fraction_oscillator": 0.671875,
+      "r_per_unit": {
+        "mean": -0.2109117420349529,
+        "median": -0.2101058677047346,
+        "abs_mean": 0.22477464301870398,
+        "abs_median": 0.2101058677047346
+      },
+      "A_norm_per_unit": {
+        "mean": -0.26418949084066556,
+        "abs_mean": 0.26418949084066556,
+        "median": -0.25932075711045977
+      },
+      "R_PCA_per_unit": {
+        "mean": 0.5485401796424996,
+        "median": 0.5317692458641169
+      },
+      "dtheta_per_unit": {
+        "circular_mean": 1.6874168587587204,
+        "abs_mean": 1.6874168587587204,
+        "deviation_from_pi_over_2_radians": {
+          "mean": 0.2217594134266087,
+          "median": 0.15986156177444066
+        },
+        "resultant_length": {
+          "mean": 0.7979905595495508,
+          "median": 0.8167417049335173
+        }
+      }
+    },
+    "swiglu": {
+      "shape": {
+        "N": 256,
+        "L": 21,
+        "D": 64
+      },
+      "n_oscillator": 43,
+      "n_degenerate": 0,
+      "n_other": 21,
+      "fraction_oscillator": 0.671875,
+      "r_per_unit": {
+        "mean": -0.24882634237772355,
+        "median": -0.26321252629779884,
+        "abs_mean": 0.2500148865748694,
+        "abs_median": 0.26321252629779884
+      },
+      "A_norm_per_unit": {
+        "mean": -0.23259523191023673,
+        "abs_mean": 0.23259523191023673,
+        "median": -0.23171896308710976
+      },
+      "R_PCA_per_unit": {
+        "mean": 0.5542094198733496,
+        "median": 0.5455740337026911
+      },
+      "dtheta_per_unit": {
+        "circular_mean": 1.745054758166387,
+        "abs_mean": 1.745054758166387,
+        "deviation_from_pi_over_2_radians": {
+          "mean": 0.22104356453677199,
+          "median": 0.19324169622781207
+        },
+        "resultant_length": {
+          "mean": 0.8142780815960913,
+          "median": 0.8168606619530161
+        }
+      }
+    }
+  }
+}

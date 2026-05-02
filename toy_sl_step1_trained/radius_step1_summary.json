@@ -1,0 +1,215 @@
+{
+  "checkpoint": "toy_transformer_run/model_trained.pt",
+  "n_sublayers": 25,
+  "d_model": 64,
+  "n_input_pairs": 256,
+  "sublayer_meta": [
+    {
+      "kind": "embed",
+      "layer": null
+    },
+    {
+      "kind": "attn",
+      "layer": 0
+    },
+    {
+      "kind": "mlp",
+      "layer": 0
+    },
+    {
+      "kind": "attn",
+      "layer": 1
+    },
+    {
+      "kind": "mlp",
+      "layer": 1
+    },
+    {
+      "kind": "attn",
+      "layer": 2
+    },
+    {
+      "kind": "mlp",
+      "layer": 2
+    },
+    {
+      "kind": "attn",
+      "layer": 3
+    },
+    {
+      "kind": "mlp",
+      "layer": 3
+    },
+    {
+      "kind": "attn",
+      "layer": 4
+    },
+    {
+      "kind": "mlp",
+      "layer": 4
+    },
+    {
+      "kind": "attn",
+      "layer": 5
+    },
+    {
+      "kind": "mlp",
+      "layer": 5
+    },
+    {
+      "kind": "attn",
+      "layer": 6
+    },
+    {
+      "kind": "mlp",
+      "layer": 6
+    },
+    {
+      "kind": "attn",
+      "layer": 7
+    },
+    {
+      "kind": "mlp",
+      "layer": 7
+    },
+    {
+      "kind": "attn",
+      "layer": 8
+    },
+    {
+      "kind": "mlp",
+      "layer": 8
+    },
+    {
+      "kind": "attn",
+      "layer": 9
+    },
+    {
+      "kind": "mlp",
+      "layer": 9
+    },
+    {
+      "kind": "attn",
+      "layer": 10
+    },
+    {
+      "kind": "mlp",
+      "layer": 10
+    },
+    {
+      "kind": "attn",
+      "layer": 11
+    },
+    {
+      "kind": "mlp",
+      "layer": 11
+    }
+  ],
+  "per_position": {
+    "5": {
+      "label": "pos 5 (\"=\")",
+      "per_unit_plane": {
+        "L_star_aggregate": 23,
+        "peak_d2": 5.051803112030029,
+        "L_star_per_input_median": 23.0,
+        "L_star_per_input_std": 0.0,
+        "mean_radius_at_l0": 0.0,
+        "mean_radius_at_lminus1": 20.996049880981445,
+        "growth_factor": 1292.9495782785255
+      },
+      "global_plane": {
+        "L_star_aggregate": 0,
+        "peak_d2": 0.7530692219734192,
+        "L_star_per_input_median": 0.0,
+        "L_star_per_input_std": 0.0,
+        "mean_radius_at_l0": 1.3909025192260742,
+        "mean_radius_at_lminus1": 1.972838044166565,
+        "growth_factor": 10.056523018154705,
+        "top_w_unit_idx_top5": [
+          38,
+          49,
+          35,
+          29,
+          13
+        ],
+        "top_w_unit_mag_top5": [
+          0.22054725885391235,
+          0.2178271859884262,
+          0.21664154529571533,
+          0.21086041629314423,
+          0.19411884248256683
+        ]
+      }
+    },
+    "6": {
+      "label": "pos 6 (c2)",
+      "per_unit_plane": {
+        "L_star_aggregate": 23,
+        "peak_d2": 4.162670135498047,
+        "L_star_per_input_median": 23.0,
+        "L_star_per_input_std": 0.0,
+        "mean_radius_at_l0": 0.0,
+        "mean_radius_at_lminus1": 16.817258834838867,
+        "growth_factor": 937.5823838981557
+      },
+      "global_plane": {
+        "L_star_aggregate": 0,
+        "peak_d2": 0.5520147681236267,
+        "L_star_per_input_median": 0.0,
+        "L_star_per_input_std": 0.0,
+        "mean_radius_at_l0": 1.0359764099121094,
+        "mean_radius_at_lminus1": 1.4864124059677124,
+        "growth_factor": 9.74120679635805,
+        "top_w_unit_idx_top5": [
+          29,
+          5,
+          41,
+          25,
+          35
+        ],
+        "top_w_unit_mag_top5": [
+          0.24780488014221191,
+          0.2328532636165619,
+          0.2306680679321289,
+          0.2288929522037506,
+          0.22783873975276947
+        ]
+      }
+    },
+    "7": {
+      "label": "pos 7 (c1)",
+      "per_unit_plane": {
+        "L_star_aggregate": 23,
+        "peak_d2": 3.144078016281128,
+        "L_star_per_input_median": 23.0,
+        "L_star_per_input_std": 0.06237781024480981,
+        "mean_radius_at_l0": 0.0,
+        "mean_radius_at_lminus1": 13.96005630493164,
+        "growth_factor": 127.94297788352893
+      },
+      "global_plane": {
+        "L_star_aggregate": 0,
+        "peak_d2": 0.41061052680015564,
+        "L_star_per_input_median": 0.0,
+        "L_star_per_input_std": 0.0,
+        "mean_radius_at_l0": 0.9395567178726196,
+        "mean_radius_at_lminus1": 1.289686679840088,
+        "growth_factor": 5.135961673990502,
+        "top_w_unit_idx_top5": [
+          58,
+          5,
+          62,
+          18,
+          41
+        ],
+        "top_w_unit_mag_top5": [
+          0.25904351472854614,
+          0.2479194551706314,
+          0.24628452956676483,
+          0.2346259355545044,
+          0.22667568922042847
+        ]
+      }
+    }
+  }
+}

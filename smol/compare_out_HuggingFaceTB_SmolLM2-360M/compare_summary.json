@@ -1,0 +1,69 @@
+{
+  "model": "HuggingFaceTB/SmolLM2-360M",
+  "trained": {
+    "label": "trained",
+    "n_units": 960,
+    "n_pairs": 200000,
+    "rotation_count": {
+      "mean": -10.62382984161377,
+      "std": 0.6842203140258789,
+      "median": -10.756612777709961,
+      "abs_mean": 10.62382984161377
+    },
+    "trace_corr": {
+      "mean": 0.0004922534579254,
+      "std": 0.17293541986334968,
+      "abs_mean": 0.14401098517688068
+    },
+    "cospec_mag": {
+      "mean": 9625.818782136812,
+      "median": 5482.473006957645,
+      "p95": 25803.949242929353
+    },
+    "phase_clustering_fractions": {
+      "near_0": 0.25029,
+      "near_pi": 0.250295,
+      "near_pi_over_2": 0.10565,
+      "near_minus_pi_over_2": 0.105815
+    },
+    "phase_clustering_mag_means": {
+      "near_0": 10767.15146117661,
+      "near_pi": 11249.431563652483,
+      "near_pi_over_2": 7661.135523164718,
+      "near_minus_pi_over_2": 7472.559651020877
+    }
+  },
+  "random_init": {
+    "label": "random_init",
+    "n_units": 960,
+    "n_pairs": 200000,
+    "rotation_count": {
+      "mean": -10.708215713500977,
+      "std": 0.1485263556241989,
+      "median": -10.714603424072266,
+      "abs_mean": 10.708215713500977
+    },
+    "trace_corr": {
+      "mean": 3.1399139102047686e-05,
+      "std": 0.056616063594301956,
+      "abs_mean": 0.044882859531286005
+    },
+    "cospec_mag": {
+      "mean": 108.24010769658848,
+      "median": 96.66870823558236,
+      "p95": 229.42274053278473
+    },
+    "phase_clustering_fractions": {
+      "near_0": 0.20493,
+      "near_pi": 0.20415,
+      "near_pi_over_2": 0.1337,
+      "near_minus_pi_over_2": 0.13263
+    },
+    "phase_clustering_mag_means": {
+      "near_0": 119.96753847380998,
+      "near_pi": 119.22536713856903,
+      "near_pi_over_2": 93.9725589302061,
+      "near_minus_pi_over_2": 94.49353471170515
+    }
+  }
+}

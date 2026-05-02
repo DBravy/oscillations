@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Model weights
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Data / outputs
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.csv
+
+# Figures / media
+*.png
+*.pdf
+*.svg
+*.wav
+*.mp3
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
+.env
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+zzz.txt

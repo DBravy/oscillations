@@ -1,0 +1,131 @@
+{
+  "position": 5,
+  "trim": 2,
+  "metrics_explained": {
+    "r": "Pearson(x_l, dx_l) over l per (input, unit). Median over inputs. ~0 = oscillator, +/-1 = degenerate.",
+    "A_norm": "Shoelace signed area of (x, dx) trajectory per (input, unit), normalized by std(x)*std(dx)*L. Magnitude = rotation strength. Negative = forward (clockwise) oscillation.",
+    "R_PCA": "Smaller/larger eigenvalue of 2x2 cov of (x, dx) cloud computed AFTER rescaling dx so var(rescaled dx) = var(x). Frequency-invariant. 1 = circular oscillator at any frequency, 0 = line. Equals (1 - |r|) / (1 + |r|) by construction.",
+    "dtheta": "Mean phase offset arg(Hilbert(dx)) - arg(Hilbert(x)) per (input, unit). Circular mean over inputs. +pi/2 = forward oscillator."
+  },
+  "thresholds": {
+    "r_threshold": 0.3,
+    "pca_threshold": 0.4,
+    "dtheta_threshold_radians": 0.7853981633974483
+  },
+  "per_model": {
+    "random": {
+      "shape": {
+        "N": 256,
+        "L": 21,
+        "D": 64
+      },
+      "n_oscillator": 33,
+      "n_degenerate": 0,
+      "n_other": 31,
+      "fraction_oscillator": 0.515625,
+      "r_per_unit": {
+        "mean": -0.2906510291076301,
+        "median": -0.2870495332396118,
+        "abs_mean": 0.29554153515631676,
+        "abs_median": 0.2870495332396118
+      },
+      "A_norm_per_unit": {
+        "mean": -0.29880996315671227,
+        "abs_mean": 0.29880996315671227,
+        "median": -0.2880519796903193
+      },
+      "R_PCA_per_unit": {
+        "mean": 0.5610517271427481,
+        "median": 0.5539422553915259
+      },
+      "dtheta_per_unit": {
+        "circular_mean": 1.9248818523444542,
+        "abs_mean": 1.9248818523444542,
+        "deviation_from_pi_over_2_radians": {
+          "mean": 0.3938823559727328,
+          "median": 0.3571536086774403
+        },
+        "resultant_length": {
+          "mean": 0.937415607444658,
+          "median": 0.9805475538654317
+        }
+      }
+    },
+    "gelu": {
+      "shape": {
+        "N": 256,
+        "L": 21,
+        "D": 64
+      },
+      "n_oscillator": 31,
+      "n_degenerate": 0,
+      "n_other": 33,
+      "fraction_oscillator": 0.484375,
+      "r_per_unit": {
+        "mean": -0.09486378474797325,
+        "median": -0.12378349793675394,
+        "abs_mean": 0.27609041322641836,
+        "abs_median": 0.2694898067070086
+      },
+      "A_norm_per_unit": {
+        "mean": -0.23253806375303973,
+        "abs_mean": 0.23253806375303973,
+        "median": -0.23550288699666547
+      },
+      "R_PCA_per_unit": {
+        "mean": 0.463582283493627,
+        "median": 0.47282842500293704
+      },
+      "dtheta_per_unit": {
+        "circular_mean": 1.4267598731174809,
+        "abs_mean": 1.428616881691537,
+        "deviation_from_pi_over_2_radians": {
+          "mean": 0.489387952915252,
+          "median": 0.42046420666214335
+        },
+        "resultant_length": {
+          "mean": 0.6920845721091325,
+          "median": 0.6830038760103316
+        }
+      }
+    },
+    "swiglu": {
+      "shape": {
+        "N": 256,
+        "L": 21,
+        "D": 64
+      },
+      "n_oscillator": 31,
+      "n_degenerate": 0,
+      "n_other": 33,
+      "fraction_oscillator": 0.484375,
+      "r_per_unit": {
+        "mean": -0.20026765240764127,
+        "median": -0.23638900741540866,
+        "abs_mean": 0.2571059649678814,
+        "abs_median": 0.25328479773034773
+      },
+      "A_norm_per_unit": {
+        "mean": -0.17258810882037368,
+        "abs_mean": 0.1739201646305236,
+        "median": -0.20035383069694396
+      },
+      "R_PCA_per_unit": {
+        "mean": 0.5032076894224221,
+        "median": 0.5037288369639352
+      },
+      "dtheta_per_unit": {
+        "circular_mean": 1.6456757373604014,
+        "abs_mean": 1.6572417407637978,
+        "deviation_from_pi_over_2_radians": {
+          "mean": 0.38139834777630743,
+          "median": 0.2682887060085155
+        },
+        "resultant_length": {
+          "mean": 0.6120968727741192,
+          "median": 0.658048500416162
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "checkpoint": "toy_transformer_run/model_trained.pt",
+  "positions": [
+    5,
+    6,
+    7
+  ],
+  "top_n": 100,
+  "n_samples": 256,
+  "n_sublayers": 25,
+  "d_model": 64,
+  "freq_bin": 1,
+  "units_plotted": [
+    2,
+    24,
+    50,
+    47,
+    11,
+    34,
+    27,
+    54,
+    31,
+    38,
+    46,
+    16
+  ],
+  "sublayer_meta": [
+    {
+      "kind": "embed",
+      "layer": null
+    },
+    {
+      "kind": "attn",
+      "layer": 0
+    },
+    {
+      "kind": "mlp",
+      "layer": 0
+    },
+    {
+      "kind": "attn",
+      "layer": 1
+    },
+    {
+      "kind": "mlp",
+      "layer": 1
+    },
+    {
+      "kind": "attn",
+      "layer": 2
+    },
+    {
+      "kind": "mlp",
+      "layer": 2
+    },
+    {
+      "kind": "attn",
+      "layer": 3
+    },
+    {
+      "kind": "mlp",
+      "layer": 3
+    },
+    {
+      "kind": "attn",
+      "layer": 4
+    },
+    {
+      "kind": "mlp",
+      "layer": 4
+    },
+    {
+      "kind": "attn",
+      "layer": 5
+    },
+    {
+      "kind": "mlp",
+      "layer": 5
+    },
+    {
+      "kind": "attn",
+      "layer": 6
+    },
+    {
+      "kind": "mlp",
+      "layer": 6
+    },
+    {
+      "kind": "attn",
+      "layer": 7
+    },
+    {
+      "kind": "mlp",
+      "layer": 7
+    },
+    {
+      "kind": "attn",
+      "layer": 8
+    },
+    {
+      "kind": "mlp",
+      "layer": 8
+    },
+    {
+      "kind": "attn",
+      "layer": 9
+    },
+    {
+      "kind": "mlp",
+      "layer": 9
+    },
+    {
+      "kind": "attn",
+      "layer": 10
+    },
+    {
+      "kind": "mlp",
+      "layer": 10
+    },
+    {
+      "kind": "attn",
+      "layer": 11
+    },
+    {
+      "kind": "mlp",
+      "layer": 11
+    }
+  ],
+  "top_pair_cluster_counts": {
+    "5": {
+      "near_0": 50,
+      "near_pi_over_2": 1,
+      "near_minus_pi_over_2": 1,
+      "near_pi": 41,
+      "between": 7
+    },
+    "6": {
+      "near_0": 48,
+      "near_pi_over_2": 0,
+      "near_minus_pi_over_2": 0,
+      "near_pi": 43,
+      "between": 9
+    },
+    "7": {
+      "near_0": 40,
+      "near_pi_over_2": 4,
+      "near_minus_pi_over_2": 2,
+      "near_pi": 42,
+      "between": 12
+    }
+  },
+  "top_pair_mag_summary": {
+    "5": {
+      "max": 2535.5446792005077,
+      "min_in_top": 1364.4700747913835,
+      "median_in_top": 1513.416930722528
+    },
+    "6": {
+      "max": 1599.580772180069,
+      "min_in_top": 704.3473992389486,
+      "median_in_top": 779.9112774463404
+    },
+    "7": {
+      "max": 1627.62928727457,
+      "min_in_top": 844.7470190097689,
+      "median_in_top": 972.9178684455044
+    }
+  }
+}

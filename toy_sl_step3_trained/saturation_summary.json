@@ -1,0 +1,51 @@
+{
+  "radius_data": "toy_sl_step1_trained/radius_data.npz",
+  "n_sublayers": 25,
+  "d_model": 64,
+  "threshold": 0.9,
+  "saturation": {
+    "pos5_pos6": {
+      "asymptote": 0.35842757551114285,
+      "baseline": 1.0,
+      "target_value": 0.42258481796002845,
+      "saturation_layer": 0
+    },
+    "pos5_pos7": {
+      "asymptote": 0.01916772072372794,
+      "baseline": 1.0,
+      "target_value": 0.1172509486513551,
+      "saturation_layer": 0
+    },
+    "pos6_pos7": {
+      "asymptote": 0.10663422242081833,
+      "baseline": 1.0,
+      "target_value": 0.19597080017873647,
+      "saturation_layer": 0
+    }
+  },
+  "fiedler_overlap_at_final_layer": {
+    "pos5_pos6": 0.06916322374414315,
+    "pos5_pos7": 0.004061081371893036,
+    "pos6_pos7": 0.25498373153116377
+  },
+  "eigenvalue_gap_per_position_lambda3_minus_lambda2_summary": {
+    "5": {
+      "min": 0.0014907213626429439,
+      "median": 4.935062408447266,
+      "max": 1641.2236328125,
+      "min_layer": 1
+    },
+    "6": {
+      "min": 0.0004204304423183203,
+      "median": 2.4611887335777283,
+      "max": 1058.21728515625,
+      "min_layer": 1
+    },
+    "7": {
+      "min": 0.018069881945848465,
+      "median": 5.153845310211182,
+      "max": 262.56494140625,
+      "min_layer": 1
+    }
+  }
+}

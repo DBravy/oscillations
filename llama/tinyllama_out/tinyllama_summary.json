@@ -1,0 +1,156 @@
+{
+  "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+  "n_samples": 128,
+  "n_sublayers": 44,
+  "d_model": 2048,
+  "variants": {
+    "cumulative": {
+      "label": "cumulative",
+      "n_steps": 44,
+      "freq_bin_used": 1,
+      "R": {
+        "mean": -6.992608070373535,
+        "std": 0.42569127678871155,
+        "median": -7.04170036315918,
+        "abs_mean": 6.992608070373535
+      },
+      "null_R": {
+        "mean": -9.947376815485768,
+        "std": 0.565130280057449
+      },
+      "trace_corr": {
+        "mean": -0.00024852197889067986,
+        "std": 0.19794580423270078,
+        "abs_mean": 0.1772702713286126
+      },
+      "cospec_mag": {
+        "mean": 14.754530608590668,
+        "median": 4.030696795949009,
+        "p95": 25.362474533952742
+      },
+      "phase_clustering_fractions": {
+        "near_0": 0.32423,
+        "near_pi": 0.3259,
+        "near_pi_over_2": 0.06459,
+        "near_minus_pi_over_2": 0.06305
+      },
+      "phase_clustering_mag_means": {
+        "near_0": 20.45841142888103,
+        "near_pi": 19.717224729329903,
+        "near_pi_over_2": 3.532812221981572,
+        "near_minus_pi_over_2": 3.361270727666952
+      }
+    },
+    "combined_delta": {
+      "label": "combined_delta",
+      "n_steps": 43,
+      "freq_bin_used": 1,
+      "R": {
+        "mean": -9.557682991027832,
+        "std": 0.31681886315345764,
+        "median": -9.582334518432617,
+        "abs_mean": 9.557682991027832
+      },
+      "null_R": {
+        "mean": -9.481283898837864,
+        "std": 0.2631923166327057
+      },
+      "trace_corr": {
+        "mean": -3.210456422664874e-05,
+        "std": 0.16008162967903658,
+        "abs_mean": 0.13852631874437493
+      },
+      "cospec_mag": {
+        "mean": 0.12191110016851354,
+        "median": 0.043440826691651425,
+        "p95": 0.20715647948276186
+      },
+      "phase_clustering_fractions": {
+        "near_0": 0.270565,
+        "near_pi": 0.27248,
+        "near_pi_over_2": 0.089565,
+        "near_minus_pi_over_2": 0.089835
+      },
+      "phase_clustering_mag_means": {
+        "near_0": 0.17333514925307156,
+        "near_pi": 0.16756870276998637,
+        "near_pi_over_2": 0.05577705208026433,
+        "near_minus_pi_over_2": 0.04797330127598666
+      }
+    },
+    "attn_delta": {
+      "label": "attn_delta",
+      "n_steps": 22,
+      "freq_bin_used": 1,
+      "R": {
+        "mean": -4.63141393661499,
+        "std": 0.16589324176311493,
+        "median": -4.640163898468018,
+        "abs_mean": 4.63141393661499
+      },
+      "null_R": {
+        "mean": -4.646085957426112,
+        "std": 0.17826121380947396
+      },
+      "trace_corr": {
+        "mean": -0.0004529954836703335,
+        "std": 0.13499697486150894,
+        "abs_mean": 0.10247913070729237
+      },
+      "cospec_mag": {
+        "mean": 0.019641148222483754,
+        "median": 0.01358420166437731,
+        "p95": 0.049602229806563224
+      },
+      "phase_clustering_fractions": {
+        "near_0": 0.23007,
+        "near_pi": 0.23149,
+        "near_pi_over_2": 0.113175,
+        "near_minus_pi_over_2": 0.114665
+      },
+      "phase_clustering_mag_means": {
+        "near_0": 0.023627860804620548,
+        "near_pi": 0.02339037987136258,
+        "near_pi_over_2": 0.01432693789599279,
+        "near_minus_pi_over_2": 0.014116730358735216
+      }
+    },
+    "mlp_delta": {
+      "label": "mlp_delta",
+      "n_steps": 21,
+      "freq_bin_used": 1,
+      "R": {
+        "mean": -4.400537490844727,
+        "std": 0.23459690809249878,
+        "median": -4.4078521728515625,
+        "abs_mean": 4.400537490844727
+      },
+      "null_R": {
+        "mean": -4.383332057316633,
+        "std": 0.22786193138388164
+      },
+      "trace_corr": {
+        "mean": -0.0001730775240951276,
+        "std": 0.207305942315688,
+        "abs_mean": 0.19069220082282204
+      },
+      "cospec_mag": {
+        "mean": 0.09814798139017979,
+        "median": 0.029706978006336558,
+        "p95": 0.166544698688719
+      },
+      "phase_clustering_fractions": {
+        "near_0": 0.30821,
+        "near_pi": 0.31188,
+        "near_pi_over_2": 0.07144,
+        "near_minus_pi_over_2": 0.07201
+      },
+      "phase_clustering_mag_means": {
+        "near_0": 0.13930526290585726,
+        "near_pi": 0.1363129984257902,
+        "near_pi_over_2": 0.026552914002065737,
+        "near_minus_pi_over_2": 0.023975204604304873
+      }
+    }
+  }
+}

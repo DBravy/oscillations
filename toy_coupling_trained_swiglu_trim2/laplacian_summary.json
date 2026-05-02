@@ -1,0 +1,396 @@
+{
+  "checkpoint": "toy_transformer_run_swiglu/model_trained.pt",
+  "trim_sublayers": 2,
+  "n_sublayers": 21,
+  "original_n_sublayers": 25,
+  "used_sublayer_indices": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "sublayer_meta": [
+    {
+      "kind": "mlp",
+      "layer": 0
+    },
+    {
+      "kind": "attn",
+      "layer": 1
+    },
+    {
+      "kind": "mlp",
+      "layer": 1
+    },
+    {
+      "kind": "attn",
+      "layer": 2
+    },
+    {
+      "kind": "mlp",
+      "layer": 2
+    },
+    {
+      "kind": "attn",
+      "layer": 3
+    },
+    {
+      "kind": "mlp",
+      "layer": 3
+    },
+    {
+      "kind": "attn",
+      "layer": 4
+    },
+    {
+      "kind": "mlp",
+      "layer": 4
+    },
+    {
+      "kind": "attn",
+      "layer": 5
+    },
+    {
+      "kind": "mlp",
+      "layer": 5
+    },
+    {
+      "kind": "attn",
+      "layer": 6
+    },
+    {
+      "kind": "mlp",
+      "layer": 6
+    },
+    {
+      "kind": "attn",
+      "layer": 7
+    },
+    {
+      "kind": "mlp",
+      "layer": 7
+    },
+    {
+      "kind": "attn",
+      "layer": 8
+    },
+    {
+      "kind": "mlp",
+      "layer": 8
+    },
+    {
+      "kind": "attn",
+      "layer": 9
+    },
+    {
+      "kind": "mlp",
+      "layer": 9
+    },
+    {
+      "kind": "attn",
+      "layer": 10
+    },
+    {
+      "kind": "mlp",
+      "layer": 10
+    }
+  ],
+  "original_sublayer_meta": [
+    {
+      "kind": "embed",
+      "layer": null
+    },
+    {
+      "kind": "attn",
+      "layer": 0
+    },
+    {
+      "kind": "mlp",
+      "layer": 0
+    },
+    {
+      "kind": "attn",
+      "layer": 1
+    },
+    {
+      "kind": "mlp",
+      "layer": 1
+    },
+    {
+      "kind": "attn",
+      "layer": 2
+    },
+    {
+      "kind": "mlp",
+      "layer": 2
+    },
+    {
+      "kind": "attn",
+      "layer": 3
+    },
+    {
+      "kind": "mlp",
+      "layer": 3
+    },
+    {
+      "kind": "attn",
+      "layer": 4
+    },
+    {
+      "kind": "mlp",
+      "layer": 4
+    },
+    {
+      "kind": "attn",
+      "layer": 5
+    },
+    {
+      "kind": "mlp",
+      "layer": 5
+    },
+    {
+      "kind": "attn",
+      "layer": 6
+    },
+    {
+      "kind": "mlp",
+      "layer": 6
+    },
+    {
+      "kind": "attn",
+      "layer": 7
+    },
+    {
+      "kind": "mlp",
+      "layer": 7
+    },
+    {
+      "kind": "attn",
+      "layer": 8
+    },
+    {
+      "kind": "mlp",
+      "layer": 8
+    },
+    {
+      "kind": "attn",
+      "layer": 9
+    },
+    {
+      "kind": "mlp",
+      "layer": 9
+    },
+    {
+      "kind": "attn",
+      "layer": 10
+    },
+    {
+      "kind": "mlp",
+      "layer": 10
+    },
+    {
+      "kind": "attn",
+      "layer": 11
+    },
+    {
+      "kind": "mlp",
+      "layer": 11
+    }
+  ],
+  "per_position": {
+    "5": {
+      "label": "pos 5 (\"=\")",
+      "flavors": {
+        "cospec_mag": {
+          "lambda_1_unnorm": 1.5741170353365508e-12,
+          "lambda_2_unnorm": 3212.2073483708714,
+          "lambda_3_unnorm": 3321.384481051074,
+          "spectral_radius_unnorm": 7681.7632513065055,
+          "lambda_1_norm": -7.122129606123549e-17,
+          "lambda_2_norm": 0.7645009757179365,
+          "lambda_3_norm": 0.8606176594305454,
+          "spectral_radius_norm": 1.0678313962491714,
+          "suggested_k_unnorm": 1,
+          "biggest_gap_unnorm": 3212.20734837087,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.7645009757179366,
+          "degree_mean": 5197.629747746076,
+          "degree_std": 997.2068308859641,
+          "degree_min": 3174.9339960315165,
+          "degree_max": 7496.034709982265
+        },
+        "plv": {
+          "lambda_1_unnorm": -2.8965097452616544e-14,
+          "lambda_2_unnorm": 21.43865911659258,
+          "lambda_3_unnorm": 23.621917767455518,
+          "spectral_radius_unnorm": 39.54375596887162,
+          "lambda_1_norm": 3.1172434694863223e-14,
+          "lambda_2_norm": 0.6580863589991957,
+          "lambda_3_norm": 0.8316952267652227,
+          "spectral_radius_norm": 1.0750405102861778,
+          "suggested_k_unnorm": 1,
+          "biggest_gap_unnorm": 21.438659116592607,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.6580863589991645,
+          "degree_mean": 33.03530721436009,
+          "degree_std": 2.8140021452938506,
+          "degree_min": 23.411331289161385,
+          "degree_max": 38.654136546798966
+        },
+        "signed": {
+          "lambda_1_unnorm": 401.5016268820726,
+          "lambda_2_unnorm": 1696.1400905139276,
+          "lambda_3_unnorm": 2029.710547667202,
+          "spectral_radius_unnorm": 6814.137721919713,
+          "lambda_1_norm": 0.08781557515803703,
+          "lambda_2_norm": 0.4936714499614061,
+          "lambda_3_norm": 0.6509972267879028,
+          "spectral_radius_norm": 1.049436097941416,
+          "suggested_k_unnorm": 1,
+          "biggest_gap_unnorm": 1294.6384636318548,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.40585587480336904,
+          "degree_mean": 4307.485832372762,
+          "degree_std": 1057.4654751340072,
+          "degree_min": 2342.5921854549733,
+          "degree_max": 6634.353212326785
+        }
+      }
+    },
+    "6": {
+      "label": "pos 6 (c2)",
+      "flavors": {
+        "cospec_mag": {
+          "lambda_1_unnorm": -4.307948223309448e-12,
+          "lambda_2_unnorm": 2948.0999147462126,
+          "lambda_3_unnorm": 3194.5304511007967,
+          "spectral_radius_unnorm": 36020.43487357765,
+          "lambda_1_norm": 6.500546850397828e-16,
+          "lambda_2_norm": 0.8961241634474767,
+          "lambda_3_norm": 0.9085311483268724,
+          "spectral_radius_norm": 1.056649599258359,
+          "suggested_k_unnorm": 1,
+          "biggest_gap_unnorm": 2948.0999147462167,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.896124163447476,
+          "degree_mean": 10779.489521905118,
+          "degree_std": 6123.168051720382,
+          "degree_min": 2907.930053384177,
+          "degree_max": 35147.25089663107
+        },
+        "plv": {
+          "lambda_1_unnorm": -1.7756412136284778e-14,
+          "lambda_2_unnorm": 24.034005527661325,
+          "lambda_3_unnorm": 25.80667926384304,
+          "spectral_radius_unnorm": 39.04469733220906,
+          "lambda_1_norm": 2.8455019324917096e-14,
+          "lambda_2_norm": 0.7010457073986325,
+          "lambda_3_norm": 0.8087664397987818,
+          "spectral_radius_norm": 1.0586083124172272,
+          "suggested_k_unnorm": 1,
+          "biggest_gap_unnorm": 24.034005527661343,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.7010457073986041,
+          "degree_mean": 35.10077055821529,
+          "degree_std": 2.564999067614314,
+          "degree_min": 25.425133672037774,
+          "degree_max": 38.056162112179564
+        },
+        "signed": {
+          "lambda_1_unnorm": 761.4774754860985,
+          "lambda_2_unnorm": 2084.16243458298,
+          "lambda_3_unnorm": 2325.9572837159512,
+          "spectral_radius_unnorm": 28989.388550778975,
+          "lambda_1_norm": 0.08385468816716161,
+          "lambda_2_norm": 0.5213534232018541,
+          "lambda_3_norm": 0.6722439438378718,
+          "spectral_radius_norm": 1.0703861169963078,
+          "suggested_k_unnorm": 1,
+          "biggest_gap_unnorm": 1322.6849590968816,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.43749873503469244,
+          "degree_mean": 7921.27826323067,
+          "degree_std": 5046.187722526757,
+          "degree_min": 2263.055491769802,
+          "degree_max": 28115.182005689072
+        }
+      }
+    },
+    "7": {
+      "label": "pos 7 (c1)",
+      "flavors": {
+        "cospec_mag": {
+          "lambda_1_unnorm": -1.860380911492979e-12,
+          "lambda_2_unnorm": 2277.656674709529,
+          "lambda_3_unnorm": 2588.875997745374,
+          "spectral_radius_unnorm": 11066.181232115807,
+          "lambda_1_norm": 7.013194920064952e-17,
+          "lambda_2_norm": 0.7222592956075994,
+          "lambda_3_norm": 0.8664082412250648,
+          "spectral_radius_norm": 1.0647647787169252,
+          "suggested_k_unnorm": 1,
+          "biggest_gap_unnorm": 2277.6566747095308,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.7222592956075993,
+          "degree_mean": 5223.327017796025,
+          "degree_std": 2039.760391289003,
+          "degree_min": 2253.8634983622414,
+          "degree_max": 10769.841633079039
+        },
+        "plv": {
+          "lambda_1_unnorm": 1.1931473254556253e-14,
+          "lambda_2_unnorm": 18.483802653645206,
+          "lambda_3_unnorm": 20.700423581895848,
+          "spectral_radius_unnorm": 35.754624667834044,
+          "lambda_1_norm": 3.474047212606539e-14,
+          "lambda_2_norm": 0.7406793240179279,
+          "lambda_3_norm": 0.831318396477239,
+          "spectral_radius_norm": 1.0624684815789043,
+          "suggested_k_unnorm": 1,
+          "biggest_gap_unnorm": 18.483802653645196,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.7406793240178932,
+          "degree_mean": 29.03427067723696,
+          "degree_std": 3.6662615800325113,
+          "degree_min": 18.80897062878421,
+          "degree_max": 34.8863879302511
+        },
+        "signed": {
+          "lambda_1_unnorm": 337.78627002911867,
+          "lambda_2_unnorm": 1358.7391799370737,
+          "lambda_3_unnorm": 1460.6623011140566,
+          "spectral_radius_unnorm": 10318.359852242898,
+          "lambda_1_norm": 0.06980768959563974,
+          "lambda_2_norm": 0.5232897616359324,
+          "lambda_3_norm": 0.699935084656093,
+          "spectral_radius_norm": 1.0473687747685367,
+          "suggested_k_unnorm": 1,
+          "biggest_gap_unnorm": 1020.952909907955,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.45348207204029267,
+          "degree_mean": 4385.298161605836,
+          "degree_std": 2097.5915032819407,
+          "degree_min": 1536.406963084417,
+          "degree_max": 10019.056404497673
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "model": "HuggingFaceTB/SmolLM2-360M",
+  "n_samples": 256,
+  "n_sublayers": 64,
+  "d_model": 960,
+  "n_pairs": 200000,
+  "trace_corr": {
+    "mean": -6.145946671315301e-05,
+    "std": 0.12104032629031901,
+    "abs_mean": 0.09923732640314964,
+    "p5": -0.19877404969847703,
+    "p95": 0.19807082199931755
+  },
+  "freq_dist": {
+    "mean": 0.030675,
+    "median": 0.0,
+    "frac_zero": 0.969325
+  },
+  "phase_diff": {
+    "mean_resultant_length_unweighted": 0.0020548715886025983,
+    "mean_resultant_length_weighted": 0.003857720666622432
+  },
+  "cospec_mag": {
+    "mean": 0.04364879415616979,
+    "median": 0.028681829875223597
+  },
+  "proximity_correlations": {
+    "basis_vs_trace_corr": -0.001401054680310094,
+    "basis_vs_freq_dist": -0.028401604155035932,
+    "basis_vs_cospec_mag": -0.012539030961470129,
+    "freqsort_vs_trace_corr": -0.0012615153809065395,
+    "freqsort_vs_cospec_mag": -0.009889728291488825
+  }
+}

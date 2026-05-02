@@ -1,0 +1,67 @@
+{
+  "model": "HuggingFaceTB/SmolLM2-360M",
+  "cumulative": {
+    "label": "cumulative",
+    "n_steps": 64,
+    "R": {
+      "mean": -10.62382984161377,
+      "std": 0.6842203140258789,
+      "median": -10.756612777709961,
+      "abs_mean": 10.62382984161377
+    },
+    "trace_corr": {
+      "mean": 0.0004922534579254,
+      "std": 0.17293541986334968,
+      "abs_mean": 0.14401098517688068
+    },
+    "cospec_mag": {
+      "mean": 9625.818782136812,
+      "median": 5482.473006957645,
+      "p95": 25803.949242929353
+    },
+    "phase_clustering_fractions": {
+      "near_0": 0.25029,
+      "near_pi": 0.250295,
+      "near_pi_over_2": 0.10565,
+      "near_minus_pi_over_2": 0.105815
+    },
+    "phase_clustering_mag_means": {
+      "near_0": 10767.15146117661,
+      "near_pi": 11249.431563652483,
+      "near_pi_over_2": 7661.135523164718,
+      "near_minus_pi_over_2": 7472.559651020877
+    }
+  },
+  "delta": {
+    "label": "delta",
+    "n_steps": 63,
+    "R": {
+      "mean": -14.4805908203125,
+      "std": 0.41586872935295105,
+      "median": -14.505509376525879,
+      "abs_mean": 14.4805908203125
+    },
+    "trace_corr": {
+      "mean": -2.3722244937192104e-07,
+      "std": 0.08501107247488263,
+      "abs_mean": 0.06841453537381444
+    },
+    "cospec_mag": {
+      "mean": 106.65696993162967,
+      "median": 65.49383637387925,
+      "p95": 244.80753011499743
+    },
+    "phase_clustering_fractions": {
+      "near_0": 0.22354,
+      "near_pi": 0.22464,
+      "near_pi_over_2": 0.11881,
+      "near_minus_pi_over_2": 0.11637
+    },
+    "phase_clustering_mag_means": {
+      "near_0": 123.03972709065903,
+      "near_pi": 125.16296141691359,
+      "near_pi_over_2": 78.54593815856111,
+      "near_minus_pi_over_2": 78.59059935902532
+    }
+  }
+}

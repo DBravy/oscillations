@@ -1,0 +1,78 @@
+{
+  "model": "HuggingFaceTB/SmolLM2-360M",
+  "n_samples": 256,
+  "n_sublayers": 64,
+  "d_model": 960,
+  "n_pairs_sampled": 200000,
+  "n_furthest": 66666,
+  "selected_subpopulation": {
+    "magnitude_threshold_quantile": 0.9,
+    "phase_band_radians": 0.5235987755982988,
+    "n_selected": 4956,
+    "fraction_of_furthest": 0.07434074340743407,
+    "fraction_of_all": 0.02478
+  },
+  "participation": {
+    "uniform_expectation": 10.325,
+    "max_count": 93,
+    "median_count": 5.0,
+    "n_units_above_2x_uniform": 145,
+    "n_units_zero_participation": 123,
+    "top_units_by_participation": [
+      612,
+      474,
+      895,
+      46,
+      398,
+      367,
+      767,
+      333,
+      856,
+      96,
+      818,
+      502,
+      791,
+      745,
+      615,
+      348,
+      19,
+      698,
+      115,
+      87
+    ],
+    "top_unit_counts": [
+      93,
+      80,
+      78,
+      76,
+      75,
+      75,
+      65,
+      65,
+      63,
+      62,
+      60,
+      60,
+      59,
+      57,
+      55,
+      55,
+      52,
+      52,
+      52,
+      51
+    ]
+  },
+  "axial_quadrature_index_by_threshold": {
+    "top_50pct": 0.380870899540962,
+    "top_25pct": 0.5083996430310951,
+    "top_10pct": 0.6152653242880382,
+    "top_5pct": 0.6482336570705637,
+    "top_2pct": 0.6587021667529671,
+    "top_1pct": 0.6429182997428836
+  },
+  "correlation_with_unit_features": {
+    "participation_vs_dom_freq": -0.08436191585254946,
+    "participation_vs_mean_abs": 0.37233757490571806
+  }
+}
