@@ -1,0 +1,631 @@
+{
+  "model": "HuggingFaceTB/SmolLM2-360M",
+  "n_samples": 256,
+  "n_sublayers": 56,
+  "n_sublayers_full": 64,
+  "skip_first": 4,
+  "skip_last": 4,
+  "d_model": 960,
+  "fft_length_L": 56,
+  "K_positive_freqs": 29,
+  "pairs": [
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      3
+    ]
+  ],
+  "primary_pair": [
+    1,
+    1
+  ],
+  "auto_bicoh": {
+    "per_pair_means": {
+      "1,1": 0.3205277846831444,
+      "1,2": 0.3166422012757458,
+      "2,2": 0.2871306287338895,
+      "1,3": 0.29088752717680066,
+      "2,3": 0.26747458682327085,
+      "3,3": 0.2527244066176022
+    },
+    "per_pair_max": {
+      "1,1": 0.9783723533969483,
+      "1,2": 0.9832281389824961,
+      "2,2": 0.9794860303204141,
+      "1,3": 0.9846258213674427,
+      "2,3": 0.9790907513600003,
+      "3,3": 0.9642484557664986
+    },
+    "primary_pair_null_p95": 0.22790653780102726,
+    "primary_pair_null_p99": 0.28881501525640396,
+    "n_units_above_null_p99_at_primary": 468
+  },
+  "cross_bicoh_at_primary": {
+    "real_max": 0.9036057591438293,
+    "real_p95_offdiag": 0.24691316857933995,
+    "real_p99_offdiag": 0.42356763482093807,
+    "null_p95": 0.15382888987660392,
+    "null_p99": 0.23749833285808453,
+    "null_p999": 0.370865105003155,
+    "analytical_rayleigh_p95": 0.10817614891264284,
+    "analytical_rayleigh_p99": 0.1341228766430842,
+    "n_pairs_above_null_p99": 25324,
+    "n_pairs_above_null_p999": 7317,
+    "fraction_pairs_above_null_p99": 0.055013903371567606
+  },
+  "top_unit_pairs_at_primary": [
+    {
+      "unit_A": 642,
+      "unit_B": 791,
+      "abs_cross_bicoh": 0.9036057591438293,
+      "cross_plv_phase_only": 0.39515578746795654,
+      "auto_bicoh_A": 0.8983721110381899,
+      "auto_bicoh_B": 0.903848394674108,
+      "ratio_to_null_p99": 3.8046825351139315
+    },
+    {
+      "unit_A": 341,
+      "unit_B": 560,
+      "abs_cross_bicoh": 0.900555431842804,
+      "cross_plv_phase_only": 0.3737589418888092,
+      "auto_bicoh_A": 0.8546914940431707,
+      "auto_bicoh_B": 0.8941790807273803,
+      "ratio_to_null_p99": 3.7918389615851518
+    },
+    {
+      "unit_A": 144,
+      "unit_B": 797,
+      "abs_cross_bicoh": 0.8953773379325867,
+      "cross_plv_phase_only": 0.11644265055656433,
+      "auto_bicoh_A": 0.12759037648243812,
+      "auto_bicoh_B": 0.39942995336291187,
+      "ratio_to_null_p99": 3.770036307865846
+    },
+    {
+      "unit_A": 761,
+      "unit_B": 797,
+      "abs_cross_bicoh": 0.8876189589500427,
+      "cross_plv_phase_only": 0.1426326036453247,
+      "auto_bicoh_A": 0.628649402705234,
+      "auto_bicoh_B": 0.39942995336291187,
+      "ratio_to_null_p99": 3.737369219683884
+    },
+    {
+      "unit_A": 60,
+      "unit_B": 560,
+      "abs_cross_bicoh": 0.8831071257591248,
+      "cross_plv_phase_only": 0.37767693400382996,
+      "auto_bicoh_A": 0.8387731199221615,
+      "auto_bicoh_B": 0.8941790807273803,
+      "ratio_to_null_p99": 3.71837189394849
+    },
+    {
+      "unit_A": 240,
+      "unit_B": 402,
+      "abs_cross_bicoh": 0.8818380236625671,
+      "cross_plv_phase_only": 0.2698289453983307,
+      "auto_bicoh_A": 0.5652539908979489,
+      "auto_bicoh_B": 0.5967274850736608,
+      "ratio_to_null_p99": 3.7130282686636935
+    },
+    {
+      "unit_A": 560,
+      "unit_B": 642,
+      "abs_cross_bicoh": 0.8740373253822327,
+      "cross_plv_phase_only": 0.3600911796092987,
+      "auto_bicoh_A": 0.8941790807273803,
+      "auto_bicoh_B": 0.8983721110381899,
+      "ratio_to_null_p99": 3.680182992713922
+    },
+    {
+      "unit_A": 367,
+      "unit_B": 642,
+      "abs_cross_bicoh": 0.8728132843971252,
+      "cross_plv_phase_only": 0.3836475610733032,
+      "auto_bicoh_A": 0.7874373535232858,
+      "auto_bicoh_B": 0.8983721110381899,
+      "ratio_to_null_p99": 3.675029099756539
+    },
+    {
+      "unit_A": 402,
+      "unit_B": 687,
+      "abs_cross_bicoh": 0.8719961047172546,
+      "cross_plv_phase_only": 0.3038351535797119,
+      "auto_bicoh_A": 0.5967274850736608,
+      "auto_bicoh_B": 0.595142270458587,
+      "ratio_to_null_p99": 3.6715883190570007
+    },
+    {
+      "unit_A": 791,
+      "unit_B": 934,
+      "abs_cross_bicoh": 0.8693839907646179,
+      "cross_plv_phase_only": 0.3054201006889343,
+      "auto_bicoh_A": 0.903848394674108,
+      "auto_bicoh_B": 0.7554553282918048,
+      "ratio_to_null_p99": 3.660589867315457
+    },
+    {
+      "unit_A": 325,
+      "unit_B": 642,
+      "abs_cross_bicoh": 0.8640206456184387,
+      "cross_plv_phase_only": 0.34015822410583496,
+      "auto_bicoh_A": 0.8693086212259828,
+      "auto_bicoh_B": 0.8983721110381899,
+      "ratio_to_null_p99": 3.638007202916781
+    },
+    {
+      "unit_A": 188,
+      "unit_B": 791,
+      "abs_cross_bicoh": 0.863114058971405,
+      "cross_plv_phase_only": 0.326786071062088,
+      "auto_bicoh_A": 0.7595749560622532,
+      "auto_bicoh_B": 0.903848394674108,
+      "ratio_to_null_p99": 3.6341899691866586
+    },
+    {
+      "unit_A": 0,
+      "unit_B": 721,
+      "abs_cross_bicoh": 0.8612862825393677,
+      "cross_plv_phase_only": 0.05062228441238403,
+      "auto_bicoh_A": 0.47046883710801907,
+      "auto_bicoh_B": 0.044394931197477644,
+      "ratio_to_null_p99": 3.6264940143980855
+    },
+    {
+      "unit_A": 188,
+      "unit_B": 642,
+      "abs_cross_bicoh": 0.8595949411392212,
+      "cross_plv_phase_only": 0.3078960180282593,
+      "auto_bicoh_A": 0.7595749560622532,
+      "auto_bicoh_B": 0.8983721110381899,
+      "ratio_to_null_p99": 3.619372526934183
+    },
+    {
+      "unit_A": 367,
+      "unit_B": 791,
+      "abs_cross_bicoh": 0.8575689196586609,
+      "cross_plv_phase_only": 0.4247366487979889,
+      "auto_bicoh_A": 0.7874373535232858,
+      "auto_bicoh_B": 0.903848394674108,
+      "ratio_to_null_p99": 3.6108418502924615
+    },
+    {
+      "unit_A": 126,
+      "unit_B": 642,
+      "abs_cross_bicoh": 0.8553478121757507,
+      "cross_plv_phase_only": 0.3220806419849396,
+      "auto_bicoh_A": 0.6456917933648972,
+      "auto_bicoh_B": 0.8983721110381899,
+      "ratio_to_null_p99": 3.6014897531380057
+    },
+    {
+      "unit_A": 173,
+      "unit_B": 642,
+      "abs_cross_bicoh": 0.8520429730415344,
+      "cross_plv_phase_only": 0.39768683910369873,
+      "auto_bicoh_A": 0.7698016992768261,
+      "auto_bicoh_B": 0.8983721110381899,
+      "ratio_to_null_p99": 3.5875745433154966
+    },
+    {
+      "unit_A": 173,
+      "unit_B": 791,
+      "abs_cross_bicoh": 0.8484259247779846,
+      "cross_plv_phase_only": 0.36698129773139954,
+      "auto_bicoh_A": 0.7698016992768261,
+      "auto_bicoh_B": 0.903848394674108,
+      "ratio_to_null_p99": 3.5723447595101883
+    },
+    {
+      "unit_A": 235,
+      "unit_B": 642,
+      "abs_cross_bicoh": 0.8455616235733032,
+      "cross_plv_phase_only": 0.33260267972946167,
+      "auto_bicoh_A": 0.8096524713917135,
+      "auto_bicoh_B": 0.8983721110381899,
+      "ratio_to_null_p99": 3.5602844592537104
+    },
+    {
+      "unit_A": 642,
+      "unit_B": 934,
+      "abs_cross_bicoh": 0.8440179228782654,
+      "cross_plv_phase_only": 0.35214921832084656,
+      "auto_bicoh_A": 0.8983721110381899,
+      "auto_bicoh_B": 0.7554553282918048,
+      "ratio_to_null_p99": 3.5537846212276465
+    }
+  ],
+  "top_auto_bicoh_units_per_pair": {
+    "1,1": [
+      {
+        "unit": 87,
+        "bicoh": 0.9783723533969483,
+        "phase_locking_value": 0.9890767427425233,
+        "resultant_phase_radians": -2.6776195915283028
+      },
+      {
+        "unit": 212,
+        "bicoh": 0.9420696574776685,
+        "phase_locking_value": 0.5282272979946396,
+        "resultant_phase_radians": -1.3315720199894607
+      },
+      {
+        "unit": 295,
+        "bicoh": 0.9137431398489796,
+        "phase_locking_value": 0.7215497809381529,
+        "resultant_phase_radians": 0.700405928998072
+      },
+      {
+        "unit": 439,
+        "bicoh": 0.9103933230978638,
+        "phase_locking_value": 0.6279253010533337,
+        "resultant_phase_radians": -1.9235630976701081
+      },
+      {
+        "unit": 791,
+        "bicoh": 0.903848394674108,
+        "phase_locking_value": 0.4506799544651241,
+        "resultant_phase_radians": 1.818996314019941
+      },
+      {
+        "unit": 642,
+        "bicoh": 0.8983721110381899,
+        "phase_locking_value": 0.3605039163331533,
+        "resultant_phase_radians": 1.0972497460656856
+      },
+      {
+        "unit": 544,
+        "bicoh": 0.8974946424576246,
+        "phase_locking_value": 0.8759246609987047,
+        "resultant_phase_radians": -2.430572992826409
+      },
+      {
+        "unit": 560,
+        "bicoh": 0.8941790807273803,
+        "phase_locking_value": 0.5085619105542973,
+        "resultant_phase_radians": 0.3112668562591431
+      },
+      {
+        "unit": 362,
+        "bicoh": 0.8895945467626692,
+        "phase_locking_value": 0.7550220149072291,
+        "resultant_phase_radians": -2.6029665831726723
+      },
+      {
+        "unit": 502,
+        "bicoh": 0.8793330850283426,
+        "phase_locking_value": 0.5605573164038741,
+        "resultant_phase_radians": -2.138252187958724
+      }
+    ],
+    "1,2": [
+      {
+        "unit": 87,
+        "bicoh": 0.9832281389824961,
+        "phase_locking_value": 0.9965792360342403,
+        "resultant_phase_radians": -2.513657951474914
+      },
+      {
+        "unit": 212,
+        "bicoh": 0.9606417798072358,
+        "phase_locking_value": 0.6038160716236224,
+        "resultant_phase_radians": -1.5216277492349364
+      },
+      {
+        "unit": 544,
+        "bicoh": 0.9146726946320031,
+        "phase_locking_value": 0.8854965025159198,
+        "resultant_phase_radians": -2.691953498254828
+      },
+      {
+        "unit": 439,
+        "bicoh": 0.9115818422772372,
+        "phase_locking_value": 0.7334476754640706,
+        "resultant_phase_radians": -2.3758880472560118
+      },
+      {
+        "unit": 474,
+        "bicoh": 0.9058236798244622,
+        "phase_locking_value": 0.9175274063242608,
+        "resultant_phase_radians": -2.116403628433428
+      },
+      {
+        "unit": 295,
+        "bicoh": 0.9017492396484987,
+        "phase_locking_value": 0.7610322365805435,
+        "resultant_phase_radians": 0.7373374952877075
+      },
+      {
+        "unit": 502,
+        "bicoh": 0.8972287620341327,
+        "phase_locking_value": 0.632917041595197,
+        "resultant_phase_radians": -2.2323950390690994
+      },
+      {
+        "unit": 642,
+        "bicoh": 0.8956287670010391,
+        "phase_locking_value": 0.36317616753139453,
+        "resultant_phase_radians": 0.96280826008501
+      },
+      {
+        "unit": 40,
+        "bicoh": 0.8901249525679245,
+        "phase_locking_value": 0.7018563258061563,
+        "resultant_phase_radians": 1.3685885331857564
+      },
+      {
+        "unit": 325,
+        "bicoh": 0.8883243890008838,
+        "phase_locking_value": 0.5780374124307162,
+        "resultant_phase_radians": 0.5408803070110553
+      }
+    ],
+    "2,2": [
+      {
+        "unit": 87,
+        "bicoh": 0.9794860303204141,
+        "phase_locking_value": 0.9883614392271851,
+        "resultant_phase_radians": -2.206005020705128
+      },
+      {
+        "unit": 212,
+        "bicoh": 0.968797461544237,
+        "phase_locking_value": 0.6392420804084035,
+        "resultant_phase_radians": -1.8582704796075116
+      },
+      {
+        "unit": 40,
+        "bicoh": 0.908777760205156,
+        "phase_locking_value": 0.7019874653149859,
+        "resultant_phase_radians": 0.9278589659897275
+      },
+      {
+        "unit": 439,
+        "bicoh": 0.8991615212085996,
+        "phase_locking_value": 0.7296870182591301,
+        "resultant_phase_radians": -2.670541224948527
+      },
+      {
+        "unit": 295,
+        "bicoh": 0.8990001104004997,
+        "phase_locking_value": 0.7540765905419965,
+        "resultant_phase_radians": 0.9562572466358535
+      },
+      {
+        "unit": 544,
+        "bicoh": 0.896182484486167,
+        "phase_locking_value": 0.8045036888264606,
+        "resultant_phase_radians": -2.2674072603178543
+      },
+      {
+        "unit": 710,
+        "bicoh": 0.8919604199323593,
+        "phase_locking_value": 0.5091497141874595,
+        "resultant_phase_radians": -2.8318234269741716
+      },
+      {
+        "unit": 642,
+        "bicoh": 0.8875357952743405,
+        "phase_locking_value": 0.3259506031288278,
+        "resultant_phase_radians": 1.1185954153446602
+      },
+      {
+        "unit": 615,
+        "bicoh": 0.865875997184451,
+        "phase_locking_value": 0.6061530999130265,
+        "resultant_phase_radians": -2.1668041076236904
+      },
+      {
+        "unit": 791,
+        "bicoh": 0.8559857246018826,
+        "phase_locking_value": 0.4209810563094038,
+        "resultant_phase_radians": 1.9106601919405548
+      }
+    ],
+    "1,3": [
+      {
+        "unit": 87,
+        "bicoh": 0.9846258213674427,
+        "phase_locking_value": 0.9935108723617259,
+        "resultant_phase_radians": -2.370095893301193
+      },
+      {
+        "unit": 212,
+        "bicoh": 0.9594717512149921,
+        "phase_locking_value": 0.601799017847175,
+        "resultant_phase_radians": -1.4832514721186167
+      },
+      {
+        "unit": 295,
+        "bicoh": 0.9099667812065468,
+        "phase_locking_value": 0.7506631794735011,
+        "resultant_phase_radians": 0.9224317583018308
+      },
+      {
+        "unit": 474,
+        "bicoh": 0.9091312056433967,
+        "phase_locking_value": 0.8693687177201834,
+        "resultant_phase_radians": -1.4525936362576954
+      },
+      {
+        "unit": 439,
+        "bicoh": 0.9006759967236376,
+        "phase_locking_value": 0.6447298716408768,
+        "resultant_phase_radians": -2.1914357534065974
+      },
+      {
+        "unit": 710,
+        "bicoh": 0.9001877113251988,
+        "phase_locking_value": 0.4192357992659239,
+        "resultant_phase_radians": 3.098821247159904
+      },
+      {
+        "unit": 544,
+        "bicoh": 0.8980705247458706,
+        "phase_locking_value": 0.8282202003551083,
+        "resultant_phase_radians": -2.073725293713689
+      },
+      {
+        "unit": 40,
+        "bicoh": 0.8949270815352807,
+        "phase_locking_value": 0.6411555391906488,
+        "resultant_phase_radians": 1.1113523023013132
+      },
+      {
+        "unit": 642,
+        "bicoh": 0.8885417004610351,
+        "phase_locking_value": 0.3512605251013852,
+        "resultant_phase_radians": 1.2168464648825645
+      },
+      {
+        "unit": 791,
+        "bicoh": 0.8573048156584742,
+        "phase_locking_value": 0.4284352421352942,
+        "resultant_phase_radians": 1.9503348997341656
+      }
+    ],
+    "2,3": [
+      {
+        "unit": 87,
+        "bicoh": 0.9790907513600003,
+        "phase_locking_value": 0.9867819922680147,
+        "resultant_phase_radians": -2.0367960541484282
+      },
+      {
+        "unit": 212,
+        "bicoh": 0.9641908499826948,
+        "phase_locking_value": 0.658050478682299,
+        "resultant_phase_radians": -1.7862501449612658
+      },
+      {
+        "unit": 295,
+        "bicoh": 0.9098536792126671,
+        "phase_locking_value": 0.7500815916214902,
+        "resultant_phase_radians": 1.163347282941272
+      },
+      {
+        "unit": 439,
+        "bicoh": 0.9085329800876224,
+        "phase_locking_value": 0.6053786524009477,
+        "resultant_phase_radians": -2.471294971061209
+      },
+      {
+        "unit": 642,
+        "bicoh": 0.8990873015985521,
+        "phase_locking_value": 0.3540225984241813,
+        "resultant_phase_radians": 1.3786485225770444
+      },
+      {
+        "unit": 544,
+        "bicoh": 0.8956204302505587,
+        "phase_locking_value": 0.798778005596649,
+        "resultant_phase_radians": -1.589242423407888
+      },
+      {
+        "unit": 710,
+        "bicoh": 0.8904499250408755,
+        "phase_locking_value": 0.4087223302919397,
+        "resultant_phase_radians": -2.644005586671563
+      },
+      {
+        "unit": 40,
+        "bicoh": 0.8878570343475912,
+        "phase_locking_value": 0.5856152468672939,
+        "resultant_phase_radians": 0.8011568945095122
+      },
+      {
+        "unit": 615,
+        "bicoh": 0.8781686474023719,
+        "phase_locking_value": 0.7182974547447175,
+        "resultant_phase_radians": -1.768710569918045
+      },
+      {
+        "unit": 791,
+        "bicoh": 0.8592710079582526,
+        "phase_locking_value": 0.3317000447036492,
+        "resultant_phase_radians": 1.7330717096651846
+      }
+    ],
+    "3,3": [
+      {
+        "unit": 87,
+        "bicoh": 0.9642484557664986,
+        "phase_locking_value": 0.9697394408898442,
+        "resultant_phase_radians": -1.9383095986603411
+      },
+      {
+        "unit": 212,
+        "bicoh": 0.9572916545418475,
+        "phase_locking_value": 0.6384039048802913,
+        "resultant_phase_radians": -1.660365067527077
+      },
+      {
+        "unit": 295,
+        "bicoh": 0.9110947331517956,
+        "phase_locking_value": 0.7395334901179066,
+        "resultant_phase_radians": 1.400920505882578
+      },
+      {
+        "unit": 474,
+        "bicoh": 0.9015926350852983,
+        "phase_locking_value": 0.8736179560381038,
+        "resultant_phase_radians": -0.9482145053185214
+      },
+      {
+        "unit": 615,
+        "bicoh": 0.8847097013595496,
+        "phase_locking_value": 0.6963448443446767,
+        "resultant_phase_radians": -1.2704830517340278
+      },
+      {
+        "unit": 40,
+        "bicoh": 0.8837981558760359,
+        "phase_locking_value": 0.11254579145304136,
+        "resultant_phase_radians": 1.0727503987909273
+      },
+      {
+        "unit": 439,
+        "bicoh": 0.8829765462568386,
+        "phase_locking_value": 0.5794926373357373,
+        "resultant_phase_radians": -2.0244371537678134
+      },
+      {
+        "unit": 710,
+        "bicoh": 0.8781835629246457,
+        "phase_locking_value": 0.3117355960047265,
+        "resultant_phase_radians": -1.9111064122497372
+      },
+      {
+        "unit": 642,
+        "bicoh": 0.8694295493245764,
+        "phase_locking_value": 0.32890628210701506,
+        "resultant_phase_radians": 1.2261696202933896
+      },
+      {
+        "unit": 544,
+        "bicoh": 0.8648779232510883,
+        "phase_locking_value": 0.8331574974600935,
+        "resultant_phase_radians": -1.0872419844657122
+      }
+    ]
+  }
+}

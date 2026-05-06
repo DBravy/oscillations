@@ -1,0 +1,20 @@
+{
+  "baseline": {
+    "n": 256,
+    "acc_pos5": 0.99609375,
+    "acc_pos6": 0.96484375,
+    "acc_pos7": 1.0,
+    "acc_full_seq": 0.9609375
+  },
+  "ablated": {
+    "n": 256,
+    "acc_pos5": 0.96484375,
+    "acc_pos6": 0.94921875,
+    "acc_pos7": 0.98828125,
+    "acc_full_seq": 0.90234375
+  },
+  "ablated_units": [
+    58,
+    62
+  ]
+}

@@ -1,0 +1,396 @@
+{
+  "checkpoint": "toy_transformer_run/model_trained.pt",
+  "trim_sublayers": 2,
+  "n_sublayers": 21,
+  "original_n_sublayers": 25,
+  "used_sublayer_indices": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "sublayer_meta": [
+    {
+      "kind": "mlp",
+      "layer": 0
+    },
+    {
+      "kind": "attn",
+      "layer": 1
+    },
+    {
+      "kind": "mlp",
+      "layer": 1
+    },
+    {
+      "kind": "attn",
+      "layer": 2
+    },
+    {
+      "kind": "mlp",
+      "layer": 2
+    },
+    {
+      "kind": "attn",
+      "layer": 3
+    },
+    {
+      "kind": "mlp",
+      "layer": 3
+    },
+    {
+      "kind": "attn",
+      "layer": 4
+    },
+    {
+      "kind": "mlp",
+      "layer": 4
+    },
+    {
+      "kind": "attn",
+      "layer": 5
+    },
+    {
+      "kind": "mlp",
+      "layer": 5
+    },
+    {
+      "kind": "attn",
+      "layer": 6
+    },
+    {
+      "kind": "mlp",
+      "layer": 6
+    },
+    {
+      "kind": "attn",
+      "layer": 7
+    },
+    {
+      "kind": "mlp",
+      "layer": 7
+    },
+    {
+      "kind": "attn",
+      "layer": 8
+    },
+    {
+      "kind": "mlp",
+      "layer": 8
+    },
+    {
+      "kind": "attn",
+      "layer": 9
+    },
+    {
+      "kind": "mlp",
+      "layer": 9
+    },
+    {
+      "kind": "attn",
+      "layer": 10
+    },
+    {
+      "kind": "mlp",
+      "layer": 10
+    }
+  ],
+  "original_sublayer_meta": [
+    {
+      "kind": "embed",
+      "layer": null
+    },
+    {
+      "kind": "attn",
+      "layer": 0
+    },
+    {
+      "kind": "mlp",
+      "layer": 0
+    },
+    {
+      "kind": "attn",
+      "layer": 1
+    },
+    {
+      "kind": "mlp",
+      "layer": 1
+    },
+    {
+      "kind": "attn",
+      "layer": 2
+    },
+    {
+      "kind": "mlp",
+      "layer": 2
+    },
+    {
+      "kind": "attn",
+      "layer": 3
+    },
+    {
+      "kind": "mlp",
+      "layer": 3
+    },
+    {
+      "kind": "attn",
+      "layer": 4
+    },
+    {
+      "kind": "mlp",
+      "layer": 4
+    },
+    {
+      "kind": "attn",
+      "layer": 5
+    },
+    {
+      "kind": "mlp",
+      "layer": 5
+    },
+    {
+      "kind": "attn",
+      "layer": 6
+    },
+    {
+      "kind": "mlp",
+      "layer": 6
+    },
+    {
+      "kind": "attn",
+      "layer": 7
+    },
+    {
+      "kind": "mlp",
+      "layer": 7
+    },
+    {
+      "kind": "attn",
+      "layer": 8
+    },
+    {
+      "kind": "mlp",
+      "layer": 8
+    },
+    {
+      "kind": "attn",
+      "layer": 9
+    },
+    {
+      "kind": "mlp",
+      "layer": 9
+    },
+    {
+      "kind": "attn",
+      "layer": 10
+    },
+    {
+      "kind": "mlp",
+      "layer": 10
+    },
+    {
+      "kind": "attn",
+      "layer": 11
+    },
+    {
+      "kind": "mlp",
+      "layer": 11
+    }
+  ],
+  "per_position": {
+    "5": {
+      "label": "pos 5 (\"=\")",
+      "flavors": {
+        "cospec_mag": {
+          "lambda_1_unnorm": 9.882876656030852e-13,
+          "lambda_2_unnorm": 2386.2665991558642,
+          "lambda_3_unnorm": 2437.958211526394,
+          "spectral_radius_unnorm": 20424.316087287123,
+          "lambda_1_norm": -1.7107424048606179e-16,
+          "lambda_2_norm": 0.8680880906604242,
+          "lambda_3_norm": 0.8924542595219854,
+          "spectral_radius_norm": 1.0515016358626563,
+          "suggested_k_unnorm": 1,
+          "biggest_gap_unnorm": 2386.2665991558633,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.8680880906604245,
+          "degree_mean": 8539.98012039979,
+          "degree_std": 3805.5559195109404,
+          "degree_min": 2359.535734697259,
+          "degree_max": 19960.194426730734
+        },
+        "plv": {
+          "lambda_1_unnorm": 4.8907077037701025e-15,
+          "lambda_2_unnorm": 15.807572776327511,
+          "lambda_3_unnorm": 21.023558997978096,
+          "spectral_radius_unnorm": 47.11757756099927,
+          "lambda_1_norm": 2.827721605955504e-14,
+          "lambda_2_norm": 0.8377348038363566,
+          "lambda_3_norm": 0.8426363535032856,
+          "spectral_radius_norm": 1.058284982509417,
+          "suggested_k_unnorm": 1,
+          "biggest_gap_unnorm": 15.807572776327506,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.8377348038363283,
+          "degree_mean": 36.71680635353255,
+          "degree_std": 7.824846319508455,
+          "degree_min": 15.635649251392513,
+          "degree_max": 46.16750169700697
+        },
+        "signed": {
+          "lambda_1_unnorm": 574.0243091632464,
+          "lambda_2_unnorm": 1180.0029537959965,
+          "lambda_3_unnorm": 1223.4967632939022,
+          "spectral_radius_unnorm": 16613.08038874982,
+          "lambda_1_norm": 0.08318132761509026,
+          "lambda_2_norm": 0.46376399260183027,
+          "lambda_3_norm": 0.8722327580587904,
+          "spectral_radius_norm": 1.0590487526751855,
+          "suggested_k_unnorm": 1,
+          "biggest_gap_unnorm": 605.9786446327502,
+          "suggested_k_norm": 2,
+          "biggest_gap_norm": 0.40846876545696015,
+          "degree_mean": 6529.49256715347,
+          "degree_std": 3198.829841513328,
+          "degree_min": 1195.8275791144247,
+          "degree_max": 16143.381034139795
+        }
+      }
+    },
+    "6": {
+      "label": "pos 6 (c2)",
+      "flavors": {
+        "cospec_mag": {
+          "lambda_1_unnorm": -6.654560266975709e-13,
+          "lambda_2_unnorm": 1747.2523470544302,
+          "lambda_3_unnorm": 1835.5957877764554,
+          "spectral_radius_unnorm": 10528.063129073838,
+          "lambda_1_norm": 2.726418616890948e-16,
+          "lambda_2_norm": 0.815585400725178,
+          "lambda_3_norm": 0.8459939945185531,
+          "spectral_radius_norm": 1.0597217332624596,
+          "suggested_k_unnorm": 1,
+          "biggest_gap_unnorm": 1747.2523470544309,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.8155854007251778,
+          "degree_mean": 5487.103524228886,
+          "degree_std": 2165.710658479747,
+          "degree_min": 1724.7070778252037,
+          "degree_max": 10261.61772223765
+        },
+        "plv": {
+          "lambda_1_unnorm": -5.1964786265697755e-15,
+          "lambda_2_unnorm": 17.464818465169316,
+          "lambda_3_unnorm": 19.210697742558505,
+          "spectral_radius_unnorm": 39.640929991836124,
+          "lambda_1_norm": 3.2114624905030565e-14,
+          "lambda_2_norm": 0.7926480254064117,
+          "lambda_3_norm": 0.8412955701158603,
+          "spectral_radius_norm": 1.0623252469782116,
+          "suggested_k_unnorm": 1,
+          "biggest_gap_unnorm": 17.46481846516932,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.7926480254063796,
+          "degree_mean": 31.285910328527507,
+          "degree_std": 5.570114704344681,
+          "degree_min": 17.52830880011168,
+          "degree_max": 38.82943972854517
+        },
+        "signed": {
+          "lambda_1_unnorm": 717.7731122537255,
+          "lambda_2_unnorm": 1031.9830473507507,
+          "lambda_3_unnorm": 1087.6336017114809,
+          "spectral_radius_unnorm": 8899.10662896235,
+          "lambda_1_norm": 0.14910683932127702,
+          "lambda_2_norm": 0.3437178086973933,
+          "lambda_3_norm": 0.7736652082160266,
+          "spectral_radius_norm": 1.0529297797950325,
+          "suggested_k_unnorm": 1,
+          "biggest_gap_unnorm": 314.2099350970252,
+          "suggested_k_norm": 2,
+          "biggest_gap_norm": 0.42994739951863326,
+          "degree_mean": 4369.960052358141,
+          "degree_std": 1907.0233501774417,
+          "degree_min": 1089.8608803205993,
+          "degree_max": 8622.587158626058
+        }
+      }
+    },
+    "7": {
+      "label": "pos 7 (c1)",
+      "flavors": {
+        "cospec_mag": {
+          "lambda_1_unnorm": 1.265904108827082e-12,
+          "lambda_2_unnorm": 2791.1924052684167,
+          "lambda_3_unnorm": 4857.930035549456,
+          "spectral_radius_unnorm": 24464.524209039126,
+          "lambda_1_norm": 2.387261615806133e-17,
+          "lambda_2_norm": 0.858434632470756,
+          "lambda_3_norm": 0.883737088972928,
+          "spectral_radius_norm": 1.073872979153459,
+          "suggested_k_unnorm": 1,
+          "biggest_gap_unnorm": 2791.1924052684153,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.858434632470756,
+          "degree_mean": 10991.52013886589,
+          "degree_std": 4592.778498760451,
+          "degree_min": 2751.7437732348126,
+          "degree_max": 23642.938680504725
+        },
+        "plv": {
+          "lambda_1_unnorm": 5.298271111505087e-15,
+          "lambda_2_unnorm": 18.611410212031775,
+          "lambda_3_unnorm": 19.591392193325177,
+          "spectral_radius_unnorm": 42.79730862809523,
+          "lambda_1_norm": 3.0576274707887813e-14,
+          "lambda_2_norm": 0.8608055197526526,
+          "lambda_3_norm": 0.9002313430106755,
+          "spectral_radius_norm": 1.0589483888105249,
+          "suggested_k_unnorm": 1,
+          "biggest_gap_unnorm": 18.61141021203177,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.8608055197526221,
+          "degree_mean": 31.140220182334396,
+          "degree_std": 6.491985417960269,
+          "degree_min": 18.534021337219496,
+          "degree_max": 41.87720768814329
+        },
+        "signed": {
+          "lambda_1_unnorm": 1519.2543475296793,
+          "lambda_2_unnorm": 1853.1769750458059,
+          "lambda_3_unnorm": 2768.9963836201223,
+          "spectral_radius_unnorm": 18951.612029654498,
+          "lambda_1_norm": 0.17097342679162397,
+          "lambda_2_norm": 0.47612791206527155,
+          "lambda_3_norm": 0.5478143111836766,
+          "spectral_radius_norm": 1.0648905566582132,
+          "suggested_k_unnorm": 2,
+          "biggest_gap_unnorm": 915.8194085743164,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.3051544852736476,
+          "degree_mean": 7970.406353542838,
+          "degree_std": 3475.1866517834037,
+          "degree_min": 1903.6142588819314,
+          "degree_max": 18240.70255347486
+        }
+      }
+    }
+  }
+}

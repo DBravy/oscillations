@@ -1,0 +1,114 @@
+{
+  "radius_data": "toy_sl_step1_trained/radius_data.npz",
+  "n_sublayers": 25,
+  "d_model": 64,
+  "analysis_start": 1,
+  "thresholds": [
+    0.5,
+    0.75,
+    0.9,
+    0.95
+  ],
+  "saturation": {
+    "pos5_pos6": {
+      "asymptote": 0.3584275795001212,
+      "baseline": 0.015569844609505128,
+      "rise": 0.3428577348906161,
+      "by_threshold": {
+        "0.50": {
+          "target": 0.1869987120548132,
+          "saturation_layer": 23
+        },
+        "0.75": {
+          "target": 0.2727131457774672,
+          "saturation_layer": 23
+        },
+        "0.90": {
+          "target": 0.32414180601105963,
+          "saturation_layer": 23
+        },
+        "0.95": {
+          "target": 0.3412846927555904,
+          "saturation_layer": 23
+        }
+      }
+    },
+    "pos5_pos7": {
+      "asymptote": 0.01916772195118979,
+      "baseline": 0.01791531051496926,
+      "rise": 0.0012524114362205303,
+      "by_threshold": {
+        "0.50": {
+          "target": 0.018541516233079522,
+          "saturation_layer": 3
+        },
+        "0.75": {
+          "target": 0.018854619092134657,
+          "saturation_layer": 3
+        },
+        "0.90": {
+          "target": 0.019042480807567735,
+          "saturation_layer": 3
+        },
+        "0.95": {
+          "target": 0.019105101379378764,
+          "saturation_layer": 3
+        }
+      }
+    },
+    "pos6_pos7": {
+      "asymptote": 0.10663422236250523,
+      "baseline": 0.015467076504590407,
+      "rise": 0.09116714585791483,
+      "by_threshold": {
+        "0.50": {
+          "target": 0.06105064943354782,
+          "saturation_layer": 24
+        },
+        "0.75": {
+          "target": 0.08384243589802652,
+          "saturation_layer": 24
+        },
+        "0.90": {
+          "target": 0.09751750777671375,
+          "saturation_layer": 24
+        },
+        "0.95": {
+          "target": 0.10207586506960949,
+          "saturation_layer": 24
+        }
+      }
+    }
+  },
+  "fiedler_overlap_at_final_layer": {
+    "pos5_pos6": 0.0691632310321891,
+    "pos5_pos7": 0.004061084806545488,
+    "pos6_pos7": 0.25498373153116377
+  },
+  "fiedler_overlap_at_start_layer": {
+    "pos5_pos6": 0.015569844609505128,
+    "pos5_pos7": 0.01791531051496926,
+    "pos6_pos7": 0.015467076504590407
+  },
+  "random_baseline_2_over_sqrt_piD": 0.14104739588693907,
+  "eigenvalue_gap_summary": {
+    "5": {
+      "min": 0.001490721246227622,
+      "median": 4.935062408447266,
+      "max": 1641.2236328125,
+      "argmin_l": 1
+    },
+    "6": {
+      "min": 0.0004204304423183203,
+      "median": 2.4611887335777283,
+      "max": 1058.21728515625,
+      "argmin_l": 1
+    },
+    "7": {
+      "min": 0.018069881945848465,
+      "median": 5.153845310211182,
+      "max": 262.56494140625,
+      "argmin_l": 1
+    }
+  }
+}

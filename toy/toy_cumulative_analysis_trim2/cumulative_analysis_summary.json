@@ -1,0 +1,280 @@
+{
+  "checkpoint": "toy_transformer_run/model_trained.pt",
+  "positions": [
+    5,
+    6,
+    7
+  ],
+  "top_n": 100,
+  "n_samples": 256,
+  "n_sublayers": 21,
+  "original_n_sublayers": 25,
+  "trim_sublayers": 2,
+  "used_sublayer_indices": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "d_model": 64,
+  "freq_bin": 1,
+  "units_plotted": [
+    17,
+    48,
+    47,
+    10,
+    57,
+    42,
+    20,
+    27,
+    35,
+    6,
+    9,
+    16
+  ],
+  "sublayer_meta": [
+    {
+      "kind": "mlp",
+      "layer": 0
+    },
+    {
+      "kind": "attn",
+      "layer": 1
+    },
+    {
+      "kind": "mlp",
+      "layer": 1
+    },
+    {
+      "kind": "attn",
+      "layer": 2
+    },
+    {
+      "kind": "mlp",
+      "layer": 2
+    },
+    {
+      "kind": "attn",
+      "layer": 3
+    },
+    {
+      "kind": "mlp",
+      "layer": 3
+    },
+    {
+      "kind": "attn",
+      "layer": 4
+    },
+    {
+      "kind": "mlp",
+      "layer": 4
+    },
+    {
+      "kind": "attn",
+      "layer": 5
+    },
+    {
+      "kind": "mlp",
+      "layer": 5
+    },
+    {
+      "kind": "attn",
+      "layer": 6
+    },
+    {
+      "kind": "mlp",
+      "layer": 6
+    },
+    {
+      "kind": "attn",
+      "layer": 7
+    },
+    {
+      "kind": "mlp",
+      "layer": 7
+    },
+    {
+      "kind": "attn",
+      "layer": 8
+    },
+    {
+      "kind": "mlp",
+      "layer": 8
+    },
+    {
+      "kind": "attn",
+      "layer": 9
+    },
+    {
+      "kind": "mlp",
+      "layer": 9
+    },
+    {
+      "kind": "attn",
+      "layer": 10
+    },
+    {
+      "kind": "mlp",
+      "layer": 10
+    }
+  ],
+  "original_sublayer_meta": [
+    {
+      "kind": "embed",
+      "layer": null
+    },
+    {
+      "kind": "attn",
+      "layer": 0
+    },
+    {
+      "kind": "mlp",
+      "layer": 0
+    },
+    {
+      "kind": "attn",
+      "layer": 1
+    },
+    {
+      "kind": "mlp",
+      "layer": 1
+    },
+    {
+      "kind": "attn",
+      "layer": 2
+    },
+    {
+      "kind": "mlp",
+      "layer": 2
+    },
+    {
+      "kind": "attn",
+      "layer": 3
+    },
+    {
+      "kind": "mlp",
+      "layer": 3
+    },
+    {
+      "kind": "attn",
+      "layer": 4
+    },
+    {
+      "kind": "mlp",
+      "layer": 4
+    },
+    {
+      "kind": "attn",
+      "layer": 5
+    },
+    {
+      "kind": "mlp",
+      "layer": 5
+    },
+    {
+      "kind": "attn",
+      "layer": 6
+    },
+    {
+      "kind": "mlp",
+      "layer": 6
+    },
+    {
+      "kind": "attn",
+      "layer": 7
+    },
+    {
+      "kind": "mlp",
+      "layer": 7
+    },
+    {
+      "kind": "attn",
+      "layer": 8
+    },
+    {
+      "kind": "mlp",
+      "layer": 8
+    },
+    {
+      "kind": "attn",
+      "layer": 9
+    },
+    {
+      "kind": "mlp",
+      "layer": 9
+    },
+    {
+      "kind": "attn",
+      "layer": 10
+    },
+    {
+      "kind": "mlp",
+      "layer": 10
+    },
+    {
+      "kind": "attn",
+      "layer": 11
+    },
+    {
+      "kind": "mlp",
+      "layer": 11
+    }
+  ],
+  "top_pair_cluster_counts": {
+    "5": {
+      "near_0": 33,
+      "near_pi_over_2": 2,
+      "near_minus_pi_over_2": 4,
+      "near_pi": 35,
+      "between": 26
+    },
+    "6": {
+      "near_0": 42,
+      "near_pi_over_2": 0,
+      "near_minus_pi_over_2": 0,
+      "near_pi": 56,
+      "between": 2
+    },
+    "7": {
+      "near_0": 31,
+      "near_pi_over_2": 9,
+      "near_minus_pi_over_2": 5,
+      "near_pi": 29,
+      "between": 26
+    }
+  },
+  "top_pair_mag_summary": {
+    "5": {
+      "max": 737.913515682289,
+      "min_in_top": 319.4562493641792,
+      "median_in_top": 363.68381615394094
+    },
+    "6": {
+      "max": 348.80814197617445,
+      "min_in_top": 208.65211948092974,
+      "median_in_top": 230.3241095355306
+    },
+    "7": {
+      "max": 872.5419094968935,
+      "min_in_top": 412.8989973117648,
+      "median_in_top": 491.68588992065054
+    }
+  }
+}

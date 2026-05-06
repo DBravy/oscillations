@@ -373,7 +373,7 @@ def main():
     parser.add_argument("--out-dir", type=str, default="smollm2_pac")
     parser.add_argument("--n-samples", type=int, default=256)
     parser.add_argument("--seq-len", type=int, default=128)
-    parser.add_argument("--max-bin", type=int, default=12,
+    parser.add_argument("--max-bin", type=int, default=20,
                         help="Maximum FFT bin to consider")
     parser.add_argument("--n-phase-bins", type=int, default=18)
     parser.add_argument("--n-shuffle", type=int, default=20,

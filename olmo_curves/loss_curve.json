@@ -1,0 +1,55 @@
+{
+  "model": "allenai/OLMo-2-0425-1B",
+  "eval": {
+    "dataset": "wikitext",
+    "dataset_config": "wikitext-2-raw-v1",
+    "dataset_split": "validation",
+    "seq_len": 2048,
+    "n_blocks": 97,
+    "total_tokens": 198656,
+    "dtype": "bfloat16",
+    "seed": 0
+  },
+  "checkpoints": [
+    {
+      "step": 0,
+      "mean_loss": 11.912356280910208,
+      "total_tokens": 198559
+    },
+    {
+      "step": 1000,
+      "mean_loss": 5.909155809403628,
+      "total_tokens": 198559
+    },
+    {
+      "step": 2000,
+      "mean_loss": 4.745516460748128,
+      "total_tokens": 198559
+    },
+    {
+      "step": 3000,
+      "mean_loss": 4.263011285373617,
+      "total_tokens": 198559
+    },
+    {
+      "step": 5000,
+      "mean_loss": 3.833322600075733,
+      "total_tokens": 198559
+    },
+    {
+      "step": 10000,
+      "mean_loss": 3.5754657227196955,
+      "total_tokens": 198559
+    },
+    {
+      "step": 100000,
+      "mean_loss": 3.258093186899895,
+      "total_tokens": 198559
+    },
+    {
+      "step": 1000000,
+      "mean_loss": 3.058929577842732,
+      "total_tokens": 198559
+    }
+  ]
+}

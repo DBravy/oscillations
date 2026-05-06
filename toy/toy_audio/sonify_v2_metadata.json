@@ -1,0 +1,24 @@
+{
+  "checkpoint": "toy_transformer_run/model_trained.pt",
+  "position": 5,
+  "n_inputs": 256,
+  "n_sublayers": 25,
+  "d_model": 64,
+  "sample_rate": 44100,
+  "files": [
+    {
+      "name": "unit_chord_pos5_input0_units_0_13_29_47_f220.wav",
+      "mode": "unit_chord",
+      "units": [
+        0,
+        13,
+        29,
+        47
+      ],
+      "position": 5,
+      "input_idx": 0,
+      "base_freq": 220.0,
+      "duration_s": 4.0
+    }
+  ]
+}

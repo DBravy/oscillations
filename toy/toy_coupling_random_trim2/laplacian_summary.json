@@ -1,0 +1,396 @@
+{
+  "checkpoint": "toy_transformer_run/model_random_init.pt",
+  "trim_sublayers": 2,
+  "n_sublayers": 21,
+  "original_n_sublayers": 25,
+  "used_sublayer_indices": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "sublayer_meta": [
+    {
+      "kind": "mlp",
+      "layer": 0
+    },
+    {
+      "kind": "attn",
+      "layer": 1
+    },
+    {
+      "kind": "mlp",
+      "layer": 1
+    },
+    {
+      "kind": "attn",
+      "layer": 2
+    },
+    {
+      "kind": "mlp",
+      "layer": 2
+    },
+    {
+      "kind": "attn",
+      "layer": 3
+    },
+    {
+      "kind": "mlp",
+      "layer": 3
+    },
+    {
+      "kind": "attn",
+      "layer": 4
+    },
+    {
+      "kind": "mlp",
+      "layer": 4
+    },
+    {
+      "kind": "attn",
+      "layer": 5
+    },
+    {
+      "kind": "mlp",
+      "layer": 5
+    },
+    {
+      "kind": "attn",
+      "layer": 6
+    },
+    {
+      "kind": "mlp",
+      "layer": 6
+    },
+    {
+      "kind": "attn",
+      "layer": 7
+    },
+    {
+      "kind": "mlp",
+      "layer": 7
+    },
+    {
+      "kind": "attn",
+      "layer": 8
+    },
+    {
+      "kind": "mlp",
+      "layer": 8
+    },
+    {
+      "kind": "attn",
+      "layer": 9
+    },
+    {
+      "kind": "mlp",
+      "layer": 9
+    },
+    {
+      "kind": "attn",
+      "layer": 10
+    },
+    {
+      "kind": "mlp",
+      "layer": 10
+    }
+  ],
+  "original_sublayer_meta": [
+    {
+      "kind": "embed",
+      "layer": null
+    },
+    {
+      "kind": "attn",
+      "layer": 0
+    },
+    {
+      "kind": "mlp",
+      "layer": 0
+    },
+    {
+      "kind": "attn",
+      "layer": 1
+    },
+    {
+      "kind": "mlp",
+      "layer": 1
+    },
+    {
+      "kind": "attn",
+      "layer": 2
+    },
+    {
+      "kind": "mlp",
+      "layer": 2
+    },
+    {
+      "kind": "attn",
+      "layer": 3
+    },
+    {
+      "kind": "mlp",
+      "layer": 3
+    },
+    {
+      "kind": "attn",
+      "layer": 4
+    },
+    {
+      "kind": "mlp",
+      "layer": 4
+    },
+    {
+      "kind": "attn",
+      "layer": 5
+    },
+    {
+      "kind": "mlp",
+      "layer": 5
+    },
+    {
+      "kind": "attn",
+      "layer": 6
+    },
+    {
+      "kind": "mlp",
+      "layer": 6
+    },
+    {
+      "kind": "attn",
+      "layer": 7
+    },
+    {
+      "kind": "mlp",
+      "layer": 7
+    },
+    {
+      "kind": "attn",
+      "layer": 8
+    },
+    {
+      "kind": "mlp",
+      "layer": 8
+    },
+    {
+      "kind": "attn",
+      "layer": 9
+    },
+    {
+      "kind": "mlp",
+      "layer": 9
+    },
+    {
+      "kind": "attn",
+      "layer": 10
+    },
+    {
+      "kind": "mlp",
+      "layer": 10
+    },
+    {
+      "kind": "attn",
+      "layer": 11
+    },
+    {
+      "kind": "mlp",
+      "layer": 11
+    }
+  ],
+  "per_position": {
+    "5": {
+      "label": "pos 5 (\"=\")",
+      "flavors": {
+        "cospec_mag": {
+          "lambda_1_unnorm": -3.22832142627284e-18,
+          "lambda_2_unnorm": 0.0005853123526366353,
+          "lambda_3_unnorm": 0.0010408669918550387,
+          "spectral_radius_unnorm": 0.017069679221200933,
+          "lambda_1_norm": 1.5884698133263834e-10,
+          "lambda_2_norm": 0.982163564025066,
+          "lambda_3_norm": 0.990722029175384,
+          "spectral_radius_norm": 1.0434622905669035,
+          "suggested_k_unnorm": 1,
+          "biggest_gap_unnorm": 0.0005853123526366386,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.9821635638662191,
+          "degree_mean": 0.00629538402430026,
+          "degree_std": 0.0035372912940310674,
+          "degree_min": 0.0005766332181967558,
+          "degree_max": 0.01667203463645539
+        },
+        "plv": {
+          "lambda_1_unnorm": 6.393052857315639e-15,
+          "lambda_2_unnorm": 12.899741057537696,
+          "lambda_3_unnorm": 32.815383337784255,
+          "spectral_radius_unnorm": 59.95440031606312,
+          "lambda_1_norm": 1.7887267443810908e-14,
+          "lambda_2_norm": 0.9742387080174608,
+          "lambda_3_norm": 0.9835707513727764,
+          "spectral_radius_norm": 1.0347981374133277,
+          "suggested_k_unnorm": 2,
+          "biggest_gap_unnorm": 19.91564228024656,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.974238708017443,
+          "degree_mean": 55.37025270395722,
+          "degree_std": 7.471491440258344,
+          "degree_min": 12.707894573741502,
+          "degree_max": 58.95599773482798
+        },
+        "signed": {
+          "lambda_1_unnorm": 0.0003675461334606015,
+          "lambda_2_unnorm": 0.0004544591864752034,
+          "lambda_3_unnorm": 0.0006587942948738469,
+          "spectral_radius_unnorm": 0.012240458091019642,
+          "lambda_1_norm": 0.08629572963183688,
+          "lambda_2_norm": 0.43096582920731624,
+          "lambda_3_norm": 0.9517090134473044,
+          "spectral_radius_norm": 1.0605263961137403,
+          "suggested_k_unnorm": 4,
+          "biggest_gap_unnorm": 0.00026045247697660534,
+          "suggested_k_norm": 2,
+          "biggest_gap_norm": 0.5207431842399881,
+          "degree_mean": 0.004235190101418725,
+          "degree_std": 0.002613684354640258,
+          "degree_min": 0.0004272599629721321,
+          "degree_max": 0.011866669461624872
+        }
+      }
+    },
+    "6": {
+      "label": "pos 6 (c2)",
+      "flavors": {
+        "cospec_mag": {
+          "lambda_1_unnorm": -1.4627678181473278e-18,
+          "lambda_2_unnorm": 0.0009818615204954244,
+          "lambda_3_unnorm": 0.001451592192571297,
+          "spectral_radius_unnorm": 0.012093944634999404,
+          "lambda_1_norm": 2.1670155583992463e-10,
+          "lambda_2_norm": 0.7749678615264413,
+          "lambda_3_norm": 0.8570046717259235,
+          "spectral_radius_norm": 1.0674910587638227,
+          "suggested_k_unnorm": 1,
+          "biggest_gap_unnorm": 0.000981861520495426,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.7749678613097397,
+          "degree_mean": 0.00461465016100202,
+          "degree_std": 0.002180928828029935,
+          "degree_min": 0.0009674732362448953,
+          "degree_max": 0.011714641743438219
+        },
+        "plv": {
+          "lambda_1_unnorm": 8.240881589069964e-16,
+          "lambda_2_unnorm": 21.880974238484136,
+          "lambda_3_unnorm": 28.570749972384924,
+          "spectral_radius_unnorm": 45.77185326509601,
+          "lambda_1_norm": 2.4868502030276302e-14,
+          "lambda_2_norm": 0.6385364230572869,
+          "lambda_3_norm": 0.796107846602702,
+          "spectral_radius_norm": 1.0851188371419465,
+          "suggested_k_unnorm": 1,
+          "biggest_gap_unnorm": 21.880974238484136,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.638536423057262,
+          "degree_mean": 39.19052893422999,
+          "degree_std": 5.128780521785706,
+          "degree_min": 27.643238259529284,
+          "degree_max": 44.80747804875804
+        },
+        "signed": {
+          "lambda_1_unnorm": 0.0004741076397477277,
+          "lambda_2_unnorm": 0.00048379967682750835,
+          "lambda_3_unnorm": 0.0009178788431071039,
+          "spectral_radius_unnorm": 0.009902606618273687,
+          "lambda_1_norm": 0.1260201570248078,
+          "lambda_2_norm": 0.4598282306221751,
+          "lambda_3_norm": 0.662554090817368,
+          "spectral_radius_norm": 1.0630255311600574,
+          "suggested_k_unnorm": 2,
+          "biggest_gap_unnorm": 0.00043407916627959554,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.3338080735973673,
+          "degree_mean": 0.003283688168404053,
+          "degree_std": 0.0018282265759245007,
+          "degree_min": 0.00048276102053019436,
+          "degree_max": 0.009527245546197107
+        }
+      }
+    },
+    "7": {
+      "label": "pos 7 (c1)",
+      "flavors": {
+        "cospec_mag": {
+          "lambda_1_unnorm": 1.3778439402165195e-18,
+          "lambda_2_unnorm": 0.0009148817206669368,
+          "lambda_3_unnorm": 0.001343606966118814,
+          "spectral_radius_unnorm": 0.007258547789857749,
+          "lambda_1_norm": 3.025159625696344e-10,
+          "lambda_2_norm": 0.8075340392576668,
+          "lambda_3_norm": 0.8751209521517106,
+          "spectral_radius_norm": 1.061880217575205,
+          "suggested_k_unnorm": 1,
+          "biggest_gap_unnorm": 0.0009148817206669354,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.8075340389551507,
+          "degree_mean": 0.003305616262402353,
+          "degree_std": 0.0014726546062912625,
+          "degree_min": 0.0009029930631185223,
+          "degree_max": 0.0069978569116768774
+        },
+        "plv": {
+          "lambda_1_unnorm": 2.090908213103644e-14,
+          "lambda_2_unnorm": 20.297308401372554,
+          "lambda_3_unnorm": 21.0745296950032,
+          "spectral_radius_unnorm": 40.251666798673725,
+          "lambda_1_norm": 3.284533148224056e-14,
+          "lambda_2_norm": 0.7758288604940812,
+          "lambda_3_norm": 0.8540012447225289,
+          "spectral_radius_norm": 1.0803740503693755,
+          "suggested_k_unnorm": 1,
+          "biggest_gap_unnorm": 20.297308401372533,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.7758288604940483,
+          "degree_mean": 30.25229457818599,
+          "degree_std": 5.07176418563574,
+          "degree_min": 20.86327432759954,
+          "degree_max": 39.32211072275352
+        },
+        "signed": {
+          "lambda_1_unnorm": 0.0003311976214439122,
+          "lambda_2_unnorm": 0.0005626555301645325,
+          "lambda_3_unnorm": 0.0008701297729515271,
+          "spectral_radius_unnorm": 0.005540560388572275,
+          "lambda_1_norm": 0.12782450981385796,
+          "lambda_2_norm": 0.5392173245632179,
+          "lambda_3_norm": 0.6185866610373639,
+          "spectral_radius_norm": 1.0677185853332671,
+          "suggested_k_unnorm": 2,
+          "biggest_gap_unnorm": 0.0003074742427869946,
+          "suggested_k_norm": 1,
+          "biggest_gap_norm": 0.41139281474935996,
+          "degree_mean": 0.002292734340868663,
+          "degree_std": 0.001156920297844118,
+          "degree_min": 0.0005705603975114362,
+          "degree_max": 0.005336368773973943
+        }
+      }
+    }
+  }
+}
