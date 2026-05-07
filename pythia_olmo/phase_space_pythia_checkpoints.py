@@ -53,6 +53,7 @@ import matplotlib.pyplot as plt
 from scipy.signal import hilbert as scipy_hilbert
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from datasets import load_dataset
+from huggingface_hub import scan_cache_dir
 
 
 # ---------------------------------------------------------------------------
@@ -145,6 +146,13 @@ def pair_x_dx(x):
     return x_pair, dx
 
 
+def pair_x_dx_centered(x):
+    """Centered difference: dx_l = (x_{l+1} - x_{l-1}) / 2, paired with x_l."""
+    dx = (x[:, 2:, :] - x[:, :-2, :]) / 2.0
+    x_mid = x[:, 1:-1, :]
+    return x_mid, dx
+
+
 def per_traj_pearson(x, dx):
     x_c = x - x.mean(axis=1, keepdims=True)
     dx_c = dx - dx.mean(axis=1, keepdims=True)
@@ -182,17 +190,8 @@ def per_traj_quadrature_phase(x, dx):
     return np.angle(ratio.mean(axis=1))
 
 
-def collect_metrics(streams, trim=0):
-    """Center, optionally trim, then compute per-unit diagnostics."""
-    if trim > 0:
-        if streams.shape[1] <= 2 * trim + 2:
-            raise ValueError(
-                f"Cannot trim {trim} from each end of {streams.shape[1]} sublayers."
-            )
-        streams = streams[:, trim:streams.shape[1] - trim, :]
-    x = streams - streams.mean(axis=1, keepdims=True)
-    x_pair, dx = pair_x_dx(x)
-
+def _compute_diagnostics(x_pair, dx):
+    """Shared diagnostic computation for a given (x, dx) pairing."""
     r = per_traj_pearson(x_pair, dx)
     A = per_traj_signed_area(x_pair, dx)
     R = per_traj_pca_aspect(x_pair, dx)
@@ -211,13 +210,41 @@ def collect_metrics(streams, trim=0):
     dtheta_per_unit = np.angle(dtheta_complex.mean(axis=0))
 
     return {
-        "shape": x.shape,
         "r_per_unit": r_per_unit,
         "A_norm_per_unit": A_norm_per_unit,
         "R_per_unit": R_per_unit,
         "dtheta_per_unit": dtheta_per_unit,
         "dtheta_resultant_per_unit": dtheta_resultant,
     }
+
+
+def collect_metrics(streams, trim=0):
+    """Center, optionally trim, then compute per-unit diagnostics
+    using both forward diff and centered diff."""
+    if trim > 0:
+        if streams.shape[1] <= 2 * trim + 2:
+            raise ValueError(
+                f"Cannot trim {trim} from each end of {streams.shape[1]} sublayers."
+            )
+        streams = streams[:, trim:streams.shape[1] - trim, :]
+    x = streams - streams.mean(axis=1, keepdims=True)
+
+    # Forward difference
+    x_fwd, dx_fwd = pair_x_dx(x)
+    fwd = _compute_diagnostics(x_fwd, dx_fwd)
+
+    # Centered difference
+    x_cen, dx_cen = pair_x_dx_centered(x)
+    cen = _compute_diagnostics(x_cen, dx_cen)
+
+    result = {"shape": x.shape}
+    # Forward diff keys (original names for backward compat)
+    for k, v in fwd.items():
+        result[k] = v
+    # Centered diff keys with _cen suffix
+    for k, v in cen.items():
+        result[k + "_cen"] = v
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -239,13 +266,33 @@ def load_pythia_at_step(model_name, step, cache_dir=None):
     return model
 
 
+def cleanup_checkpoint_cache(repo_id, revision, cache_dir=None):
+    """Delete cached files for a specific revision to free disk space."""
+    try:
+        cache_info = scan_cache_dir(cache_dir)
+        for repo_info in cache_info.repos:
+            if repo_info.repo_id == repo_id:
+                for rev_info in repo_info.revisions:
+                    if revision in rev_info.refs:
+                        strategy = cache_info.delete_revisions(rev_info.commit_hash)
+                        print(f"  Cleaning up cache: freeing {strategy.expected_freed_size_str}")
+                        strategy.execute()
+                        return
+        print(f"  No cached files found for {repo_id} @ {revision}")
+    except Exception as e:
+        print(f"  Cache cleanup failed (non-fatal): {e}")
+
+
 def run_checkpoint_sweep(model_name, checkpoints, texts, tokenizer,
                           seq_len, trim, cache_dir=None):
     """Load and analyze each checkpoint sequentially. Drops model after
-    each step to keep memory bounded; only diagnostic arrays persist."""
+    each step to keep memory bounded; only diagnostic arrays persist.
+    Deletes cached checkpoint files after each step to avoid filling
+    up disk."""
     results = []
     for step in checkpoints:
         print(f"\n=== {model_name} at step {step} ===")
+        revision = f"step{step}"
         try:
             model = load_pythia_at_step(model_name, step, cache_dir=cache_dir)
         except Exception as e:
@@ -261,6 +308,8 @@ def run_checkpoint_sweep(model_name, checkpoints, texts, tokenizer,
             if torch.cuda.is_available():
                 torch.cuda.empty_cache()
 
+        cleanup_checkpoint_cache(model_name, revision, cache_dir=cache_dir)
+
         m = collect_metrics(streams, trim=trim)
         m["step"] = int(step)
         results.append(m)
@@ -268,9 +317,13 @@ def run_checkpoint_sweep(model_name, checkpoints, texts, tokenizer,
 
         # Quick per-step report
         dtheta_dev = np.abs(np.abs(m["dtheta_per_unit"]) - np.pi / 2)
-        print(f"    median |r|={np.median(np.abs(m['r_per_unit'])):.3f}, "
-              f"median dtheta_dev={np.median(dtheta_dev):.3f}, "
-              f"median resultant={np.median(m['dtheta_resultant_per_unit']):.3f}")
+        dtheta_dev_c = np.abs(np.abs(m["dtheta_per_unit_cen"]) - np.pi / 2)
+        print(f"    [fwd]  median |r|={np.median(np.abs(m['r_per_unit'])):.3f}, "
+              f"dtheta_dev={np.median(dtheta_dev):.3f}, "
+              f"resultant={np.median(m['dtheta_resultant_per_unit']):.3f}")
+        print(f"    [cen]  median |r|={np.median(np.abs(m['r_per_unit_cen'])):.3f}, "
+              f"dtheta_dev={np.median(dtheta_dev_c):.3f}, "
+              f"resultant={np.median(m['dtheta_resultant_per_unit_cen']):.3f}")
 
     return results
 
@@ -289,17 +342,30 @@ def _percentile_band(ax, steps, values, color, label, marker="o"):
             linewidth=2, markersize=6, label=label)
 
 
+def _percentile_band_dashed(ax, steps, values, color, label, marker="s"):
+    """Plot median + 25-75 IQR band with dashed lines (for centered diff)."""
+    median = np.median(values, axis=1)
+    p25 = np.percentile(values, 25, axis=1)
+    p75 = np.percentile(values, 75, axis=1)
+    ax.fill_between(steps, p25, p75, color=color, alpha=0.12)
+    ax.plot(steps, median, marker + "--", color=color,
+            linewidth=2, markersize=5, label=label)
+
+
 def plot_combined_trajectory(results, out_path, model_name):
-    """4-panel summary across training."""
+    """4-panel summary across training (forward + centered diff overlaid)."""
     steps = [m["step"] for m in results]
 
     fig, axes = plt.subplots(2, 2, figsize=(14, 10))
 
     # (0,0) dtheta deviation from pi/2
     ax = axes[0, 0]
-    devs = np.array([np.abs(np.abs(m["dtheta_per_unit"]) - np.pi / 2)
-                     for m in results])
-    _percentile_band(ax, steps, devs, "C0", "median + IQR")
+    devs_fwd = np.array([np.abs(np.abs(m["dtheta_per_unit"]) - np.pi / 2)
+                         for m in results])
+    devs_cen = np.array([np.abs(np.abs(m["dtheta_per_unit_cen"]) - np.pi / 2)
+                         for m in results])
+    _percentile_band(ax, steps, devs_fwd, "C0", "fwd diff")
+    _percentile_band_dashed(ax, steps, devs_cen, "C1", "centered diff")
     ax.axhline(0, color="black", linestyle="--", alpha=0.4,
                label="ideal quadrature")
     ax.set_xscale("symlog", linthresh=100)
@@ -307,37 +373,43 @@ def plot_combined_trajectory(results, out_path, model_name):
     ax.set_ylabel(r"$||\Delta\theta| - \pi/2|$ (radians)")
     ax.set_title("(a) Quadrature deviation: lower = sharper oscillator")
     ax.set_ylim(bottom=0)
-    ax.legend()
+    ax.legend(fontsize=8)
     ax.grid(alpha=0.3)
 
     # (0,1) |r|
     ax = axes[0, 1]
-    rs = np.array([np.abs(m["r_per_unit"]) for m in results])
-    _percentile_band(ax, steps, rs, "C2", "median + IQR")
+    rs_fwd = np.array([np.abs(m["r_per_unit"]) for m in results])
+    rs_cen = np.array([np.abs(m["r_per_unit_cen"]) for m in results])
+    _percentile_band(ax, steps, rs_fwd, "C2", "fwd diff")
+    _percentile_band_dashed(ax, steps, rs_cen, "C5", "centered diff")
     ax.set_xscale("symlog", linthresh=100)
     ax.set_xlabel("Training step")
     ax.set_ylabel(r"$|r|$")
     ax.set_title(r"(b) $|r|$: lower = $x$ and $\Delta x$ more orthogonal")
     ax.set_ylim(bottom=0)
-    ax.legend()
+    ax.legend(fontsize=8)
     ax.grid(alpha=0.3)
 
     # (1,0) |A_norm|
     ax = axes[1, 0]
-    As = np.array([np.abs(m["A_norm_per_unit"]) for m in results])
-    _percentile_band(ax, steps, As, "C3", "median + IQR")
+    As_fwd = np.array([np.abs(m["A_norm_per_unit"]) for m in results])
+    As_cen = np.array([np.abs(m["A_norm_per_unit_cen"]) for m in results])
+    _percentile_band(ax, steps, As_fwd, "C3", "fwd diff")
+    _percentile_band_dashed(ax, steps, As_cen, "C6", "centered diff")
     ax.set_xscale("symlog", linthresh=100)
     ax.set_xlabel("Training step")
     ax.set_ylabel(r"$|A_{\mathrm{norm}}|$")
     ax.set_title("(c) Rotation strength: higher = stronger ellipse")
     ax.set_ylim(bottom=0)
-    ax.legend()
+    ax.legend(fontsize=8)
     ax.grid(alpha=0.3)
 
     # (1,1) Resultant length
     ax = axes[1, 1]
-    Rs = np.array([m["dtheta_resultant_per_unit"] for m in results])
-    _percentile_band(ax, steps, Rs, "C4", "median + IQR")
+    Rs_fwd = np.array([m["dtheta_resultant_per_unit"] for m in results])
+    Rs_cen = np.array([m["dtheta_resultant_per_unit_cen"] for m in results])
+    _percentile_band(ax, steps, Rs_fwd, "C4", "fwd diff")
+    _percentile_band_dashed(ax, steps, Rs_cen, "C7", "centered diff")
     ax.axhline(1.0, color="black", linestyle=":", alpha=0.4,
                label="input-independent")
     ax.set_xscale("symlog", linthresh=100)
@@ -345,7 +417,7 @@ def plot_combined_trajectory(results, out_path, model_name):
     ax.set_ylabel(r"$\Delta\theta$ resultant length")
     ax.set_title("(d) Input-locking: 1 = identical phase across inputs")
     ax.set_ylim(0, 1.05)
-    ax.legend()
+    ax.legend(fontsize=8)
     ax.grid(alpha=0.3)
 
     fig.suptitle(
@@ -358,50 +430,68 @@ def plot_combined_trajectory(results, out_path, model_name):
 
 
 def plot_dtheta_distributions(results, out_path, model_name):
-    """Overlay dtheta histograms across checkpoints (viridis = step)."""
-    fig, ax = plt.subplots(figsize=(12, 6))
+    """Overlay dtheta histograms across checkpoints (viridis = step).
+    Top row: forward diff, bottom row: centered diff."""
+    fig, (ax_fwd, ax_cen) = plt.subplots(2, 1, figsize=(12, 10),
+                                          sharex=True, sharey=True)
     n = len(results)
     cmap = plt.cm.viridis
     for i, m in enumerate(results):
         color = cmap(i / max(n - 1, 1))
-        ax.hist(
+        ax_fwd.hist(
             m["dtheta_per_unit"], bins=72, range=(-np.pi, np.pi),
             histtype="step", linewidth=1.5, density=True,
             color=color, label=f"step {m['step']}",
         )
-    ax.axvline(np.pi / 2, color="black", linestyle="--", alpha=0.5,
-               label=r"$+\pi/2$ (forward osc)")
-    ax.axvline(-np.pi / 2, color="gray", linestyle=":", alpha=0.5,
-               label=r"$-\pi/2$ (reverse osc)")
-    ax.set_xlim(-np.pi, np.pi)
-    ax.set_xlabel(r"$\Delta\theta$")
-    ax.set_ylabel("density")
-    ax.set_title(rf"$\Delta\theta$ distribution evolution: {model_name}")
-    ax.legend(fontsize=8, ncol=2)
-    ax.grid(alpha=0.3)
+        ax_cen.hist(
+            m["dtheta_per_unit_cen"], bins=72, range=(-np.pi, np.pi),
+            histtype="step", linewidth=1.5, density=True,
+            color=color, label=f"step {m['step']}",
+        )
+    for ax in (ax_fwd, ax_cen):
+        ax.axvline(np.pi / 2, color="black", linestyle="--", alpha=0.5,
+                   label=r"$+\pi/2$ (forward osc)")
+        ax.axvline(-np.pi / 2, color="gray", linestyle=":", alpha=0.5,
+                   label=r"$-\pi/2$ (reverse osc)")
+        ax.set_xlim(-np.pi, np.pi)
+        ax.set_ylabel("density")
+        ax.legend(fontsize=7, ncol=2)
+        ax.grid(alpha=0.3)
+    ax_fwd.set_title(rf"$\Delta\theta$ distribution (forward diff): {model_name}")
+    ax_cen.set_title(rf"$\Delta\theta$ distribution (centered diff): {model_name}")
+    ax_cen.set_xlabel(r"$\Delta\theta$")
     fig.tight_layout()
     fig.savefig(out_path, dpi=130, bbox_inches="tight")
     plt.close(fig)
 
 
 def plot_resultant_distributions(results, out_path, model_name):
-    """Overlay resultant-length histograms across checkpoints."""
-    fig, ax = plt.subplots(figsize=(12, 6))
+    """Overlay resultant-length histograms across checkpoints.
+    Top row: forward diff, bottom row: centered diff."""
+    fig, (ax_fwd, ax_cen) = plt.subplots(2, 1, figsize=(12, 10),
+                                          sharex=True, sharey=True)
     n = len(results)
     cmap = plt.cm.viridis
     for i, m in enumerate(results):
         color = cmap(i / max(n - 1, 1))
-        ax.hist(
+        ax_fwd.hist(
             m["dtheta_resultant_per_unit"], bins=50, range=(0, 1),
             histtype="step", linewidth=1.5, density=True,
             color=color, label=f"step {m['step']}",
         )
-    ax.set_xlim(0, 1)
-    ax.set_xlabel("resultant length (input-locking)")
-    ax.set_ylabel("density")
-    ax.set_title(f"Resultant length distribution evolution: {model_name}")
-    ax.legend(fontsize=8, ncol=2)
-    ax.grid(alpha=0.3)
+        ax_cen.hist(
+            m["dtheta_resultant_per_unit_cen"], bins=50, range=(0, 1),
+            histtype="step", linewidth=1.5, density=True,
+            color=color, label=f"step {m['step']}",
+        )
+    for ax in (ax_fwd, ax_cen):
+        ax.set_xlim(0, 1)
+        ax.set_ylabel("density")
+        ax.legend(fontsize=7, ncol=2)
+        ax.grid(alpha=0.3)
+    ax_fwd.set_title(f"Resultant length (forward diff): {model_name}")
+    ax_cen.set_title(f"Resultant length (centered diff): {model_name}")
+    ax_cen.set_xlabel("resultant length (input-locking)")
     fig.tight_layout()
     fig.savefig(out_path, dpi=130, bbox_inches="tight")
     plt.close(fig)
@@ -410,6 +500,44 @@ def plot_resultant_distributions(results, out_path, model_name):
 # ---------------------------------------------------------------------------
 # Summary
 # ---------------------------------------------------------------------------
+
+def _build_diag_block(m, suffix=""):
+    """Build summary dict for one diff mode (forward or centered)."""
+    r_key = "r_per_unit" + suffix
+    A_key = "A_norm_per_unit" + suffix
+    R_key = "R_per_unit" + suffix
+    dt_key = "dtheta_per_unit" + suffix
+    res_key = "dtheta_resultant_per_unit" + suffix
+
+    dtheta_dev = np.abs(np.abs(m[dt_key]) - np.pi / 2)
+    return {
+        "r": {
+            "abs_mean":   float(np.abs(m[r_key]).mean()),
+            "abs_median": float(np.median(np.abs(m[r_key]))),
+            "median":     float(np.median(m[r_key])),
+        },
+        "A_norm": {
+            "abs_mean":   float(np.abs(m[A_key]).mean()),
+            "mean":       float(m[A_key].mean()),
+            "median":     float(np.median(m[A_key])),
+        },
+        "R_PCA": {
+            "mean":   float(m[R_key].mean()),
+            "median": float(np.median(m[R_key])),
+        },
+        "dtheta": {
+            "circular_mean": float(m[dt_key].mean()),
+            "deviation_from_pi_over_2": {
+                "mean":   float(dtheta_dev.mean()),
+                "median": float(np.median(dtheta_dev)),
+            },
+        },
+        "resultant_length": {
+            "mean":   float(m[res_key].mean()),
+            "median": float(np.median(m[res_key])),
+        },
+    }
+
 
 def build_summary(results, model_name):
     summary = {
@@ -420,36 +548,13 @@ def build_summary(results, model_name):
         D = m["shape"][2]
         L = m["shape"][1]
         N = m["shape"][0]
-        dtheta_dev = np.abs(np.abs(m["dtheta_per_unit"]) - np.pi / 2)
-        summary["checkpoints"].append({
+        entry = {
             "step": int(m["step"]),
             "shape": {"N": int(N), "L": int(L), "D": int(D)},
-            "r": {
-                "abs_mean":   float(np.abs(m["r_per_unit"]).mean()),
-                "abs_median": float(np.median(np.abs(m["r_per_unit"]))),
-                "median":     float(np.median(m["r_per_unit"])),
-            },
-            "A_norm": {
-                "abs_mean":   float(np.abs(m["A_norm_per_unit"]).mean()),
-                "mean":       float(m["A_norm_per_unit"].mean()),
-                "median":     float(np.median(m["A_norm_per_unit"])),
-            },
-            "R_PCA": {
-                "mean":   float(m["R_per_unit"].mean()),
-                "median": float(np.median(m["R_per_unit"])),
-            },
-            "dtheta": {
-                "circular_mean": float(m["dtheta_per_unit"].mean()),
-                "deviation_from_pi_over_2": {
-                    "mean":   float(dtheta_dev.mean()),
-                    "median": float(np.median(dtheta_dev)),
-                },
-            },
-            "resultant_length": {
-                "mean":   float(m["dtheta_resultant_per_unit"].mean()),
-                "median": float(np.median(m["dtheta_resultant_per_unit"])),
-            },
-        })
+            "forward_diff": _build_diag_block(m, ""),
+            "centered_diff": _build_diag_block(m, "_cen"),
+        }
+        summary["checkpoints"].append(entry)
     return summary
 
 
@@ -537,20 +642,24 @@ def main():
     print(f"  phase_space_trajectory.json")
 
     # ---- Console table ----
+    header = (f"{'step':>10} {'diff':>5} {'<|r|>':>8} {'<R>':>8} "
+              f"{'<dtheta>':>10} {'<dt_dev>':>10} "
+              f"{'<resultant>':>12} {'<|A|>':>8}")
     print(f"\n--- Phase-space dynamics across training: {model_name} ---")
-    print(f"{'step':>10} {'<|r|>':>8} {'<R>':>8} "
-          f"{'<dtheta>':>10} {'<dt_dev>':>10} "
-          f"{'<resultant>':>12} {'<|A|>':>8}")
+    print(header)
     for s in summary["checkpoints"]:
-        print(
-            f"{s['step']:>10} "
-            f"{s['r']['abs_mean']:>8.3f} "
-            f"{s['R_PCA']['mean']:>8.3f} "
-            f"{s['dtheta']['circular_mean']:>10.3f} "
-            f"{s['dtheta']['deviation_from_pi_over_2']['mean']:>10.3f} "
-            f"{s['resultant_length']['mean']:>12.3f} "
-            f"{s['A_norm']['abs_mean']:>8.3f}"
-        )
+        for tag, blk in [("fwd", s["forward_diff"]),
+                         ("cen", s["centered_diff"])]:
+            print(
+                f"{s['step']:>10} "
+                f"{tag:>5} "
+                f"{blk['r']['abs_mean']:>8.3f} "
+                f"{blk['R_PCA']['mean']:>8.3f} "
+                f"{blk['dtheta']['circular_mean']:>10.3f} "
+                f"{blk['dtheta']['deviation_from_pi_over_2']['mean']:>10.3f} "
+                f"{blk['resultant_length']['mean']:>12.3f} "
+                f"{blk['A_norm']['abs_mean']:>8.3f}"
+            )
 
     print(f"\nOutputs in {out_dir.resolve()}")
 

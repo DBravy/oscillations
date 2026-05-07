@@ -1,0 +1,79 @@
+{
+  "model": "HuggingFaceTB/SmolLM2-360M",
+  "n_block_subset": null,
+  "n_samples_used": 16,
+  "omega_predicted": {
+    "trained_median_rad_per_sublayer": 0.10471975511965977,
+    "random_init_median_rad_per_sublayer": 0.10471975511965977
+  },
+  "per_checkpoint": {
+    "trained": {
+      "eigvals_attn": {
+        "n_top_eigvals": 1024,
+        "abs_imag_top": {
+          "mean": 0.15722140669822693,
+          "median": 0.13571792840957642,
+          "std": 0.12728773057460785
+        },
+        "real_top": {
+          "mean": -0.18025192618370056,
+          "median": -0.11686752736568451,
+          "abs_mean": 0.19606497883796692,
+          "abs_median": 0.12205483019351959,
+          "std": 0.2078346312046051
+        },
+        "fraction_in_omega_band": 0.5859375
+      },
+      "eigvals_mlp": {
+        "n_top_eigvals": 1024,
+        "abs_imag_top": {
+          "mean": 0.6902431845664978,
+          "median": 0.4091884195804596,
+          "std": 1.6108379364013672
+        },
+        "real_top": {
+          "mean": -0.18024253845214844,
+          "median": -0.16776829957962036,
+          "abs_mean": 0.31239086389541626,
+          "abs_median": 0.18065640330314636,
+          "std": 0.6062524914741516
+        },
+        "fraction_in_omega_band": 0.0
+      }
+    },
+    "random_init": {
+      "eigvals_attn": {
+        "n_top_eigvals": 1024,
+        "abs_imag_top": {
+          "mean": 0.04613523185253143,
+          "median": 0.011341925710439682,
+          "std": 0.1638316959142685
+        },
+        "real_top": {
+          "mean": 0.0008226156351156533,
+          "median": 0.0002720638003665954,
+          "abs_mean": 0.008463583886623383,
+          "abs_median": 0.0030011488124728203,
+          "std": 0.027322428300976753
+        },
+        "fraction_in_omega_band": 0.04296875
+      },
+      "eigvals_mlp": {
+        "n_top_eigvals": 1024,
+        "abs_imag_top": {
+          "mean": 0.4061756730079651,
+          "median": 0.1986437737941742,
+          "std": 0.8439027667045593
+        },
+        "real_top": {
+          "mean": 0.004365717526525259,
+          "median": 0.001205039443448186,
+          "abs_mean": 0.044012874364852905,
+          "abs_median": 0.021559901535511017,
+          "std": 0.1194077879190445
+        },
+        "fraction_in_omega_band": 0.224609375
+      }
+    }
+  }
+}
