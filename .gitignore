@@ -45,5 +45,8 @@ venv/
 .DS_Store
 Thumbs.db
 
+# Archives
+*.tar.gz
+
 # Misc
 zzz.txt
